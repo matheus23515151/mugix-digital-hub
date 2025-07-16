@@ -39,11 +39,7 @@ const CTA = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="flex items-center justify-center gap-3 text-neutral-600">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span>Resposta em até 1 hora</span>
-            </div>
+          <div className="grid md:grid-cols-2 gap-6 text-center">
             <div className="flex items-center justify-center gap-3 text-neutral-600">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span>Sem compromisso</span>
