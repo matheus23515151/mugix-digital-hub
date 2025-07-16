@@ -19,7 +19,7 @@ const About = () => {
             </h2>
             <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4 sm:px-0">
               Enquanto outros vendem software, nós desenvolvemos uma jornada personalizada lado a lado com você. 
-              Nossa automação inteligente com IA humanizada resolve suas dores específicas, 
+              Nossa automação inteligente com IA humanizada resolve seus desafios específicos, 
               não problemas genéricos.
             </p>
           </div>
@@ -74,7 +74,7 @@ const About = () => {
           >
             <blockquote className="text-base sm:text-lg text-neutral-700 italic">
               "Nós não entregamos uma solução pronta — desenvolvemos uma jornada personalizada lado a lado com você. 
-              Sua dor vira nossa missão, seu crescimento vira nosso sucesso."
+              Seu desafio vira nossa missão, seu crescimento vira nosso sucesso."
             </blockquote>
           </div>
         </div>

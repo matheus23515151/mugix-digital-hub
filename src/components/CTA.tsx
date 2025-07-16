@@ -27,8 +27,8 @@ const CTA = () => {
               Diagnóstico gratuito: descubra quanto tempo você está perdendo
             </h3>
             <p className="text-sm sm:text-base text-neutral-600">
-              Em 30 minutos, identificamos suas principais dores e mostramos exatamente 
-              como nossa automação inteligente pode resolver, sem compromisso.
+              Em 30 minutos, identificamos suas principais oportunidades e mostramos exatamente 
+              como nossa automação inteligente pode otimizar seus processos, sem compromisso.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

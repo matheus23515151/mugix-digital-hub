@@ -49,7 +49,7 @@ const Services = () => {
           className={`text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 scroll-animate ${headerVisible ? 'animate-in' : ''}`}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
-            Como resolvemos suas <span className="text-primary">principais dores</span>
+            Como resolvemos seus <span className="text-primary">principais desafios</span>
           </h2>
           <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto px-4 sm:px-0">
             Cada serviço foi criado para eliminar um problema específico que impede seu negócio de crescer
@@ -100,7 +100,7 @@ const Services = () => {
         >
           <div className="bg-background p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-neutral-200 inline-block mx-4 sm:mx-0">
             <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 mb-2">
-              Sua dor é única? Nós criamos a solução
+              Seu desafio é único? Nós criamos a solução
             </h3>
             <p className="text-sm sm:text-base text-neutral-600 mb-3 sm:mb-4">
               Desenvolvemos automação inteligente personalizada para resolver o problema específico do seu negócio
@@ -111,7 +111,7 @@ const Services = () => {
               className="text-sm sm:text-base"
               onClick={() => window.open('/agendamento', '_self')}
             >
-              Vamos resolver sua dor específica
+              Vamos resolver seu desafio específico
             </Button>
           </div>
         </div>
