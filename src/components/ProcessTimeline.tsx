@@ -115,7 +115,7 @@ const ProcessTimeline = () => {
         </CardContent>
       </Card>
       <Card className="mt-6 bg-gradient-primary text-primary-foreground">
-        <CardContent className="p-8 text-center flex flex-col items-center justify-center space-y-4">
+        <CardContent className="container-standard section-padding text-center flex flex-col items-center justify-center space-standard">
           <h4 className="text-lg font-semibold">Pronto para começar?</h4>
           <p className="text-primary-foreground/90 max-w-md">Agende seu diagnóstico gratuito agora mesmo</p>
           <Button variant="outline" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
