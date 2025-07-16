@@ -11,6 +11,7 @@ import Differentials from "./pages/Differentials";
 import NewLanding from "./pages/NewLanding";
 import Agendamento from "./pages/Agendamento";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import MobileBottomNav from "./components/MobileBottomNav";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppFloat />
+        <MobileBottomNav />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
