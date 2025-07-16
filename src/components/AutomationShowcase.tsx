@@ -59,13 +59,13 @@ const AutomationShowcase = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 place-items-center lg:place-items-stretch">
             {automationAreas.map((area, index) => {
               const IconComponent = area.icon;
               return (
                 <Card 
                   key={index} 
-                  className={`group relative overflow-hidden border-neutral-200 hover:border-primary/50 transition-all duration-500 hover-lift animate-fade-in-up stagger-${index + 1}`}
+                  className={`group relative overflow-hidden border-neutral-200 hover:border-primary/50 transition-all duration-500 hover-lift animate-fade-in-up stagger-${index + 1} w-full max-w-sm lg:max-w-none ${index >= 3 ? 'md:col-start-2 lg:col-start-auto' : ''}`}
                 >
                   {/* Gradient Background on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${area.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
