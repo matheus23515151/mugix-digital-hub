@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Menu, X } from "lucide-react";
+import { MessageCircle, Menu, X, Home, User, Settings, Star, Calendar } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -15,14 +15,14 @@ const Header = () => {
 
   return (
     <header className="bg-background/80 backdrop-blur-md border-b border-border/50 sticky top-0 z-50 transition-all duration-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 max-w-7xl">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center group transition-all duration-300 hover:scale-105">
               <img 
                 src="/lovable-uploads/1752533e-5716-4436-9af7-42f011461172.png" 
                 alt="MugiX - Automação e Performance Digital" 
-                className="h-12 sm:h-14 w-auto transition-all duration-300 group-hover:brightness-110"
+                className="h-16 sm:h-18 w-auto transition-all duration-300 group-hover:brightness-110"
               />
             </Link>
           </div>
@@ -121,38 +121,43 @@ const Header = () => {
             <nav className="flex flex-col space-y-2">
               <Link 
                 to="/" 
-                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium flex items-center gap-3 ${isActive('/') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
-                🏠 Home
+                <Home className="w-4 h-4" />
+                Home
               </Link>
               <Link 
                 to="/sobre" 
-                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/sobre') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium flex items-center gap-3 ${isActive('/sobre') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
-                📖 Sobre
+                <User className="w-4 h-4" />
+                Sobre
               </Link>
               <Link 
                 to="/servicos" 
-                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/servicos') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium flex items-center gap-3 ${isActive('/servicos') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
-                ⚙️ Serviços
+                <Settings className="w-4 h-4" />
+                Serviços
               </Link>
               <Link 
                 to="/diferenciais" 
-                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/diferenciais') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium flex items-center gap-3 ${isActive('/diferenciais') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
-                ⭐ Diferenciais
+                <Star className="w-4 h-4" />
+                Diferenciais
               </Link>
               <Link 
                 to="/agendamento" 
-                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/agendamento') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium flex items-center gap-3 ${isActive('/agendamento') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
-                📅 Agendar
+                <Calendar className="w-4 h-4" />
+                Agendar
               </Link>
               <div className="pt-2 border-t border-border/50 mt-2">
                 <Button 
