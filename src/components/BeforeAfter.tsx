@@ -215,9 +215,9 @@ const BeforeAfter = () => {
                   mais eficiência, menos custos e melhor experiência do cliente.
                 </p>
                 <div className="flex justify-center">
-                  <Button variant="cta" size="xl" className="hover-glow">
-                    Quero automatizar meu negócio
-                    <ArrowRight className="w-5 h-5" />
+                  <Button variant="cta" size="xl" className="hover-glow text-sm sm:text-base md:text-lg">
+                    <span className="text-primary-foreground">Quero automatizar meu negócio</span>
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   </Button>
                 </div>
               </CardContent>
