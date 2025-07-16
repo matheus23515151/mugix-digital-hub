@@ -1,6 +1,10 @@
 import { Shield, Heart, Rocket, CheckCircle } from "lucide-react";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const Differentials = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+
   const differentials = [
     {
       icon: Heart,
@@ -25,32 +29,38 @@ const Differentials = () => {
   ];
 
   return (
-    <section id="diferenciais" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="diferenciais" className="py-16 sm:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900">
+          <div 
+            ref={headerRef}
+            className={`text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 scroll-animate ${headerVisible ? 'animate-in' : ''}`}
+          >
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
               Por que escolher a <span className="text-primary">MugiX</span>?
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto px-4 sm:px-0">
               Não somos apenas mais um prestador de serviços. Somos parceiros comprometidos com o seu sucesso.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+          <div 
+            ref={contentRef}
+            className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center scroll-animate ${contentVisible ? 'animate-in' : ''}`}
+          >
+            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
               {differentials.map((differential, index) => {
                 const IconComponent = differential.icon;
                 return (
-                  <div key={index} className="flex gap-4 p-6 bg-neutral-50 rounded-2xl hover:bg-gradient-subtle transition-all duration-300">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                      <IconComponent className="w-6 h-6 text-primary-foreground" />
+                  <div key={index} className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-neutral-50 rounded-xl sm:rounded-2xl hover:bg-gradient-subtle transition-all duration-300 interactive-card">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                     </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-neutral-900">
+                    <div className="space-y-1 sm:space-y-2">
+                      <h3 className="text-lg sm:text-xl font-semibold text-neutral-900">
                         {differential.title}
                       </h3>
-                      <p className="text-neutral-600 leading-relaxed">
+                      <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
                         {differential.description}
                       </p>
                     </div>
@@ -59,33 +69,33 @@ const Differentials = () => {
               })}
             </div>
 
-            <div className="space-y-8">
-              <div className="bg-gradient-primary p-8 rounded-2xl text-primary-foreground">
-                <h3 className="text-2xl font-bold mb-4">
+            <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
+              <div className="bg-gradient-primary p-6 sm:p-8 rounded-xl sm:rounded-2xl text-primary-foreground">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
                   Nossa Promessa
                 </h3>
-                <p className="text-lg leading-relaxed opacity-90">
+                <p className="text-base sm:text-lg leading-relaxed opacity-90">
                   Trabalhamos como se fôssemos parte da sua equipe. Seu sucesso é nosso sucesso, 
                   e não descansamos até ver resultados concretos no seu negócio.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-background p-6 rounded-xl border border-neutral-200 text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">98%</div>
-                  <div className="text-sm text-neutral-600">Taxa de Satisfação</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">98%</div>
+                  <div className="text-xs sm:text-sm text-neutral-600">Taxa de Satisfação</div>
                 </div>
-                <div className="bg-background p-6 rounded-xl border border-neutral-200 text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">24h</div>
-                  <div className="text-sm text-neutral-600">Tempo de Resposta</div>
+                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">24h</div>
+                  <div className="text-xs sm:text-sm text-neutral-600">Tempo de Resposta</div>
                 </div>
-                <div className="bg-background p-6 rounded-xl border border-neutral-200 text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">+150%</div>
-                  <div className="text-sm text-neutral-600">ROI Médio</div>
+                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">+150%</div>
+                  <div className="text-xs sm:text-sm text-neutral-600">ROI Médio</div>
                 </div>
-                <div className="bg-background p-6 rounded-xl border border-neutral-200 text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">∞</div>
-                  <div className="text-sm text-neutral-600">Suporte Ilimitado</div>
+                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">∞</div>
+                  <div className="text-xs sm:text-sm text-neutral-600">Suporte Ilimitado</div>
                 </div>
               </div>
             </div>

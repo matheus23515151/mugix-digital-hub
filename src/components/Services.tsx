@@ -1,8 +1,13 @@
 import { Bot, TrendingUp, Users, Palette, MessageSquare, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const Services = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
+
   const services = [
     {
       icon: Bot,
@@ -37,45 +42,51 @@ const Services = () => {
   ];
 
   return (
-    <section id="servicos" className="py-20 bg-neutral-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900">
+    <section id="servicos" className="py-16 sm:py-20 bg-neutral-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div 
+          ref={headerRef}
+          className={`text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 scroll-animate ${headerVisible ? 'animate-in' : ''}`}
+        >
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
             Nossos <span className="text-primary">Serviços</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto px-4 sm:px-0">
             Soluções digitais completas e personalizadas para acelerar o crescimento do seu negócio
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div 
+          ref={servicesRef}
+          className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 scroll-animate ${servicesVisible ? 'animate-in' : ''}`}
+        >
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="border-neutral-200 hover:shadow-lg transition-all duration-300 group">
-                <CardHeader className="space-y-4">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-6 h-6 text-primary-foreground" />
+              <Card key={index} className="border-neutral-200 hover:shadow-lg transition-all duration-300 group interactive-card">
+                <CardHeader className="space-y-3 sm:space-y-4 p-4 sm:p-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                   </div>
-                  <CardTitle className="text-xl text-neutral-900">
+                  <CardTitle className="text-lg sm:text-xl text-neutral-900">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-neutral-600">
+                  <CardDescription className="text-sm sm:text-base text-neutral-600">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
                   <ul className="space-y-2">
                     {service.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center gap-2 text-sm text-neutral-600">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <li key={benefitIndex} className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
                         {benefit}
                       </li>
                     ))}
                   </ul>
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary-blue group-hover:text-primary-foreground transition-colors">
+                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-xs sm:text-sm">
                     Saiba mais
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                   </Button>
                 </CardContent>
               </Card>
@@ -83,15 +94,18 @@ const Services = () => {
           })}
         </div>
 
-        <div className="text-center">
-          <div className="bg-background p-8 rounded-2xl border border-neutral-200 inline-block">
-            <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+        <div 
+          ref={ctaRef}
+          className={`text-center scroll-animate ${ctaVisible ? 'animate-in' : ''}`}
+        >
+          <div className="bg-background p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-neutral-200 inline-block mx-4 sm:mx-0">
+            <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 mb-2">
               Precisa de algo específico?
             </h3>
-            <p className="text-neutral-600 mb-4">
+            <p className="text-sm sm:text-base text-neutral-600 mb-3 sm:mb-4">
               Criamos soluções personalizadas para desafios únicos
             </p>
-            <Button variant="outline-hero" size="lg">
+            <Button variant="outline-hero" size="lg" className="text-sm sm:text-base">
               Vamos conversar sobre seu projeto
             </Button>
           </div>
