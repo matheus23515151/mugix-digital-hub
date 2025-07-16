@@ -10,7 +10,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/1752533e-5716-4436-9af7-42f011461172.png" 
               alt="MugiX - Automação e Performance Digital" 
-              className="h-6 sm:h-8 w-auto"
+              className="h-10 sm:h-12 w-auto"
             />
             <p className="text-neutral-400 leading-relaxed text-sm sm:text-base">
               Sua parceira estratégica para transformação digital. 
