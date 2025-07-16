@@ -89,16 +89,16 @@ const BeforeAfter = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900">
               Transformação <span className="text-primary">Real</span> nos Negócios
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-600 max-w-3xl mx-auto px-4 sm:px-0">
               Veja como a automação transforma processos manuais em máquinas de crescimento
             </p>
           </div>
 
           {/* Scenario Selector */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
             {scenarios.map((scenario, index) => {
               const ScenarioIcon = scenario.icon;
               return (
@@ -107,12 +107,13 @@ const BeforeAfter = () => {
                   variant={activeScenario === index ? "hero" : "outline"}
                   size="lg"
                   onClick={() => setActiveScenario(index)}
-                  className={`flex items-center gap-2 hover-scale ${
+                  className={`flex items-center gap-2 hover-scale text-sm sm:text-base ${
                     activeScenario === index ? "animate-pulse-glow" : ""
                   }`}
                 >
-                  <ScenarioIcon className="w-5 h-5" />
-                  {scenario.title}
+                  <ScenarioIcon className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                  <span className="hidden sm:inline">{scenario.title}</span>
+                  <span className="sm:hidden">{scenario.title.split(' ')[0]}</span>
                 </Button>
               );
             })}
@@ -128,7 +129,7 @@ const BeforeAfter = () => {
                     <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
                       <IconComponent className="w-6 h-6 text-red-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-red-800">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-red-800">
                       {currentScenario.before.title}
                     </h3>
                   </div>
@@ -137,18 +138,18 @@ const BeforeAfter = () => {
                     {currentScenario.before.problems.map((problem, index) => (
                       <li key={index} className={`flex items-start gap-3 stagger-${index + 1} animate-fade-in-up`}>
                         <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-neutral-700">{problem}</span>
+                        <span className="text-sm sm:text-base text-neutral-700">{problem}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="bg-red-100 p-4 rounded-lg">
-                    <h4 className="font-semibold text-red-800 mb-3">Métricas Típicas:</h4>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+                    <h4 className="font-semibold text-sm sm:text-base text-red-800 mb-3">Métricas Típicas:</h4>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 text-center">
                       {Object.entries(currentScenario.before.metrics).map(([key, value]) => (
                         <div key={key} className="space-y-1">
-                          <div className="text-lg font-bold text-red-700">{value}</div>
-                          <div className="text-xs text-red-600 capitalize">{key}</div>
+                          <div className="text-base sm:text-lg font-bold text-red-700">{value}</div>
+                          <div className="text-xs sm:text-sm text-red-600 capitalize">{key}</div>
                         </div>
                       ))}
                     </div>
@@ -172,7 +173,7 @@ const BeforeAfter = () => {
                     <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
                       <IconComponent className="w-6 h-6 text-primary-foreground" />
                     </div>
-                    <h3 className="text-2xl font-bold text-green-800">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-green-800">
                       {currentScenario.after.title}
                     </h3>
                   </div>
@@ -181,18 +182,18 @@ const BeforeAfter = () => {
                     {currentScenario.after.benefits.map((benefit, index) => (
                       <li key={index} className={`flex items-start gap-3 stagger-${index + 1} animate-fade-in-up`}>
                         <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-neutral-700">{benefit}</span>
+                        <span className="text-sm sm:text-base text-neutral-700">{benefit}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="bg-green-100 p-4 rounded-lg">
-                    <h4 className="font-semibold text-green-800 mb-3">Resultados Reais:</h4>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+                    <h4 className="font-semibold text-sm sm:text-base text-green-800 mb-3">Resultados Reais:</h4>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 text-center">
                       {Object.entries(currentScenario.after.metrics).map(([key, value]) => (
                         <div key={key} className="space-y-1">
-                          <div className="text-lg font-bold text-green-700">{value}</div>
-                          <div className="text-xs text-green-600 capitalize">{key}</div>
+                          <div className="text-base sm:text-lg font-bold text-green-700">{value}</div>
+                          <div className="text-xs sm:text-sm text-green-600 capitalize">{key}</div>
                         </div>
                       ))}
                     </div>
@@ -206,10 +207,10 @@ const BeforeAfter = () => {
           <div className="text-center mt-12 animate-fade-in-up">
             <Card className="max-w-2xl mx-auto bg-gradient-subtle border-primary/20">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-neutral-900 mb-3 sm:mb-4">
                   Sua empresa pode ter resultados similares
                 </h3>
-                <p className="text-neutral-600 mb-6">
+                <p className="text-sm sm:text-base md:text-lg text-neutral-600 mb-4 sm:mb-6 px-4 sm:px-0">
                   Cada negócio é único, mas os benefícios da automação são universais: 
                   mais eficiência, menos custos e melhor experiência do cliente.
                 </p>
