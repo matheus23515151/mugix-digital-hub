@@ -1,1 +1,1 @@
-refactor: improve website responsiveness across all components
+feat: create new landing page with a modern and responsive design
