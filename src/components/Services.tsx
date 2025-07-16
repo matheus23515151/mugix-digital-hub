@@ -2,10 +2,12 @@ import { Bot, TrendingUp, Users, Palette, MessageSquare, ArrowRight } from "luci
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useParallax } from "@/hooks/useParallax";
 
 const Services = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
+  const { elementRef: parallaxRef, getParallaxStyle } = useParallax();
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
   const services = [
@@ -42,8 +44,16 @@ const Services = () => {
   ];
 
   return (
-    <section id="servicos" className="py-16 sm:py-20 bg-neutral-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section ref={parallaxRef} id="servicos" className="py-16 sm:py-20 bg-neutral-50 relative overflow-hidden">
+      {/* Parallax Background Elements */}
+      <div 
+        className="absolute inset-0 opacity-10 parallax-slow" 
+        style={getParallaxStyle(0.3)}
+      >
+        <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-primary rounded-full blur-lg opacity-40"></div>
+        <div className="absolute bottom-20 left-20 w-16 h-16 bg-gradient-primary rounded-full blur-md opacity-50"></div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
         <div 
           ref={headerRef}
           className={`text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 scroll-animate ${headerVisible ? 'animate-in' : ''}`}

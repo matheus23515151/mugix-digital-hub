@@ -369,6 +369,64 @@ All colors MUST be HSL.
   .icon-shimmer:hover::before {
     left: 100%;
   }
+  
+  /* Animações específicas para "Resultados Mensuráveis" */
+  .metrics-icon {
+    animation: metrics-pulse 2s ease-in-out infinite;
+  }
+  
+  .metrics-icon:hover {
+    animation: metrics-growth 0.8s ease-out;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px hsl(var(--primary-blue) / 0.5));
+  }
+  
+  @keyframes metrics-pulse {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% { 
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes metrics-growth {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(2deg); }
+    50% { transform: scale(1.15) rotate(-1deg); }
+    75% { transform: scale(1.1) rotate(1deg); }
+    100% { transform: scale(1.2) rotate(0deg); }
+  }
+  
+  /* Parallax effects */
+  .parallax-element {
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+  }
+  
+  .parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .parallax-slow {
+    transform: translateY(var(--parallax-offset, 0));
+  }
+  
+  .parallax-fast {
+    transform: translateY(var(--parallax-offset-fast, 0));
+  }
+  
+  /* Mobile parallax fallback */
+  @media (max-width: 768px) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
 
   /* Consistent spacing and sizing for symmetry */
   .section-padding {

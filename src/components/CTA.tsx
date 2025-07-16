@@ -1,13 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Phone, Mail, ArrowRight } from "lucide-react";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useParallax } from "@/hooks/useParallax";
 
 const CTA = () => {
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
+  const { elementRef: parallaxRef, getParallaxStyle } = useParallax();
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-hero">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section ref={parallaxRef} className="py-16 sm:py-20 bg-gradient-hero relative overflow-hidden">
+      {/* Parallax Background Elements */}
+      <div 
+        className="absolute inset-0 opacity-15 parallax-slow" 
+        style={getParallaxStyle(0.25)}
+      >
+        <div className="absolute top-1/3 left-1/4 w-28 h-28 bg-gradient-primary rounded-full blur-xl opacity-30"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-20 h-20 bg-gradient-primary rounded-full blur-lg opacity-35"></div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
         <div 
           ref={ctaRef}
           className={`max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 scroll-animate ${ctaVisible ? 'animate-in' : ''}`}

@@ -200,7 +200,7 @@ const Services = () => {
                       
                       <div className="bg-background p-4 rounded-xl">
                         <div className="flex items-center gap-3 text-center">
-                          <BarChart3 className="w-8 h-8 text-primary" />
+                          <BarChart3 className="w-8 h-8 text-primary metrics-icon icon-hover" />
                           <div>
                             <div className="font-semibold text-neutral-900">Resultados Mensuráveis</div>
                             <div className="text-sm text-neutral-600">Relatórios detalhados mensais</div>

@@ -1,30 +1,36 @@
-feat: Animações visuais interativas para todos os ícones do site MugiX
+feat: Efeito parallax e animações específicas para "Resultados Mensuráveis"
 
-✨ Novas animações implementadas:
-- Sistema completo de animações CSS para ícones (hover, float, pulse, bounce, rotate, shimmer)
-- Efeitos de escala, brilho, rotação e movimento flutuante
-- Transições suaves (0.3s) com curvas de animação profissionais
-- Delays em cascata (stagger) para sequências de ícones
+✨ Novo efeito parallax implementado:
+- Hook personalizado useParallax.tsx para controle de movimento
+- Parallax aplicado em Hero, AutomationShowcase, Services e CTA
+- Elementos de fundo flutuantes com velocidades diferentes
+- Movimento sutil (0.2s-0.4s) que mantém profissionalismo
 
-🎨 Componentes atualizados com animações:
-- AutomationShowcase: ícones com float + glow + escala
-- Services (homepage): ícones com bounce + hover + glow  
-- Pages/Services: ícones com shimmer + pulse + hover
-- Pages/About: ícones com float + rotate + hover
-- Pages/Differentials: ícones com bounce + shimmer + hover
-- Footer: ícones sociais e contato com bounce + pulse + rotate
-- Header: ícones do menu e WhatsApp com pulse + bounce + rotate
-- CTA: ícones com pulse + rotate + bounce
-- WhatsAppFloat: ícone com hover + float
+🎯 Animações especiais "Resultados Mensuráveis":
+- Classe .metrics-icon com pulsação contínua (2s)
+- Hover effect .metrics-growth com rotação e escala
+- Efeito de crescimento simulando gráficos/métricas
+- Drop-shadow azul para destacar importância
 
-📱 Otimizações:
-- Performance otimizada para mobile e desktop
-- Animações consistentes em todas as páginas
-- Efeitos sutis que mantêm profissionalismo
-- Compatibilidade total com design system existente
+🎨 Efeitos visuais adicionados:
+- Elementos de fundo com blur e gradientes
+- Transições suaves com cubic-bezier profissional
+- Compatibilidade mobile (fallback para background-attachment)
+- Opacidade controlada para não interferir na legibilidade
 
-🔧 Classes CSS criadas:
-- .icon-hover, .icon-float, .icon-pulse, .icon-bounce
-- .icon-rotate, .icon-shimmer, .icon-glow, .icon-container
-- Animações keyframe personalizadas (bounce-subtle)
-- Sistema de delays para efeitos em cascata
+⚡ Performance otimizada:
+- RequestAnimationFrame para scroll suave
+- Event listeners passivos
+- Movimento calculado apenas quando visível
+- Fallbacks CSS para dispositivos móveis
+
+🔧 Componentes com parallax:
+- Hero: imagem principal + elementos flutuantes
+- AutomationShowcase: background pattern dinâmico  
+- Services: elementos decorativos sutis
+- CTA: background animado para engajamento
+
+📱 Responsividade garantida:
+- Parallax desabilitado em mobile quando necessário
+- Animações mantêm performance em todas as telas
+- Elementos continuam legíveis sobre backgrounds animados
