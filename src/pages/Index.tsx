@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import AutomationShowcase from "@/components/AutomationShowcase";
 import AutomationQuiz from "@/components/AutomationQuiz";
 import BeforeAfter from "@/components/BeforeAfter";
-import ProcessTimeline from "@/components/ProcessTimeline";
+import StrategicConversation from "@/components/StrategicConversation";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Differentials from "@/components/Differentials";
@@ -20,7 +20,7 @@ const Index = () => {
       <AutomationShowcase />
       <AutomationQuiz />
       <BeforeAfter />
-      <ProcessTimeline />
+      <StrategicConversation />
       <About />
       <Services />
       <Differentials />
