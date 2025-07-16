@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Clock, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, ArrowDown, CheckCircle, Clock, TrendingUp, Users } from "lucide-react";
 
 const BeforeAfter = () => {
   const [activeScenario, setActiveScenario] = useState(0);
@@ -135,7 +135,7 @@ const BeforeAfter = () => {
 
                   <ul className="space-y-3">
                     {currentScenario.before.problems.map((problem, index) => (
-                      <li key={index} className="flex items-start gap-3 stagger-${index + 1} animate-fade-in-up">
+                      <li key={index} className={`flex items-start gap-3 stagger-${index + 1} animate-fade-in-up`}>
                         <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-neutral-700">{problem}</span>
                       </li>
@@ -144,7 +144,7 @@ const BeforeAfter = () => {
 
                   <div className="bg-red-100 p-4 rounded-lg">
                     <h4 className="font-semibold text-red-800 mb-3">Métricas Típicas:</h4>
-                    <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
                       {Object.entries(currentScenario.before.metrics).map(([key, value]) => (
                         <div key={key} className="space-y-1">
                           <div className="text-lg font-bold text-red-700">{value}</div>
@@ -157,10 +157,10 @@ const BeforeAfter = () => {
               </CardContent>
             </Card>
 
-            {/* Arrow */}
-            <div className="hidden lg:flex justify-center items-center">
-              <div className="bg-gradient-primary p-4 rounded-full animate-pulse-glow">
-                <ArrowRight className="w-8 h-8 text-primary-foreground" />
+            {/* Arrow for mobile */}
+            <div className="lg:hidden flex justify-center items-center my-4">
+              <div className="bg-gradient-primary p-3 rounded-full animate-pulse-glow">
+                <ArrowDown className="w-6 h-6 text-primary-foreground" />
               </div>
             </div>
 
@@ -179,7 +179,7 @@ const BeforeAfter = () => {
 
                   <ul className="space-y-3">
                     {currentScenario.after.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start gap-3 stagger-${index + 1} animate-fade-in-up">
+                      <li key={index} className={`flex items-start gap-3 stagger-${index + 1} animate-fade-in-up`}>
                         <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                         <span className="text-neutral-700">{benefit}</span>
                       </li>
@@ -188,7 +188,7 @@ const BeforeAfter = () => {
 
                   <div className="bg-green-100 p-4 rounded-lg">
                     <h4 className="font-semibold text-green-800 mb-3">Resultados Reais:</h4>
-                    <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
                       {Object.entries(currentScenario.after.metrics).map(([key, value]) => (
                         <div key={key} className="space-y-1">
                           <div className="text-lg font-bold text-green-700">{value}</div>

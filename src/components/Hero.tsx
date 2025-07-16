@@ -7,21 +7,21 @@ const Hero = () => {
     <section className="bg-gradient-hero py-20 lg:py-32">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in-up">
+          <div className="space-y-8 animate-fade-in-up text-center lg:text-left">
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl font-bold text-neutral-900 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight">
                 <span className="block animate-fade-in-up">Automatize seu negócio e</span>
                 <span className="bg-gradient-primary bg-clip-text text-transparent block animate-fade-in-up stagger-1">
                   multiplique resultados
                 </span>
               </h1>
-              <p className="text-xl text-neutral-600 leading-relaxed animate-fade-in-up stagger-2">
+              <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed animate-fade-in-up stagger-2 max-w-xl mx-auto lg:mx-0">
                 Transformamos processos manuais em sistemas inteligentes. Mais tempo para estratégia, 
                 menos tempo perdido com tarefas repetitivas.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-3">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-3 justify-center lg:justify-start">
               <Button variant="cta" size="xl" className="flex items-center gap-2">
                 <MessageCircle className="w-5 h-5" />
                 Descobrir meu potencial de automação
@@ -34,7 +34,7 @@ const Hero = () => {
               </Button>
             </div>
 
-            <div className="flex items-center gap-8 pt-8 animate-fade-in-up stagger-4">
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-8 pt-8 animate-fade-in-up stagger-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-neutral-900">80%</div>
                 <div className="text-sm text-neutral-600">Menos trabalho manual</div>
@@ -50,7 +50,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative animate-fade-in-right">
+          <div className="relative animate-fade-in-right mt-12 lg:mt-0">
             <img
               src={heroImage}
               alt="Automação de processos MugiX"

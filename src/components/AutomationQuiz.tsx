@@ -115,7 +115,7 @@ const AutomationQuiz = () => {
                 </div>
 
                 {/* Navigation */}
-                <div className="flex justify-between pt-4">
+                <div className="flex flex-col sm:flex-row justify-between pt-4 gap-2">
                   <Button
                     variant="ghost"
                     onClick={() => setCurrentQuestion(Math.max(0, currentQuestion - 1))}

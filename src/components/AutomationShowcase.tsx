@@ -109,19 +109,19 @@ const AutomationShowcase = () => {
           {/* Central CTA */}
           <div className="text-center animate-fade-in-up">
             <Card className="max-w-4xl mx-auto bg-gradient-hero border-primary/20 shadow-xl">
-              <CardContent className="p-12">
+              <CardContent className="p-8 sm:p-12">
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <h3 className="text-3xl font-bold text-neutral-900">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900">
                       Não viu seu processo aqui?
                     </h3>
-                    <p className="text-xl text-neutral-600">
+                    <p className="text-lg sm:text-xl text-neutral-600">
                       Nenhum problema! Criamos automações personalizadas para qualquer processo repetitivo do seu negócio.
                     </p>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button variant="cta" size="xl" className="flex items-center gap-2 hover-glow">
+                    <Button variant="cta" size="xl" className="flex items-center gap-2 hover-glow w-full sm:w-auto">
                       <Bot className="w-5 h-5" />
                       Descobrir Meu Potencial de Automação
                       <ArrowRight className="w-5 h-5" />
@@ -132,7 +132,7 @@ const AutomationShowcase = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-8 pt-8 border-t border-neutral-200">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-neutral-200">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-primary mb-1">80%</div>
                       <div className="text-sm text-neutral-600">Redução em tarefas manuais</div>

@@ -4,13 +4,13 @@ const Footer = () => {
   return (
     <footer className="bg-neutral-900 text-neutral-100 py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-2 lg:col-span-1">
             <div className="bg-gradient-primary text-primary-foreground font-bold text-xl px-3 py-1 rounded-lg inline-block">
               MugiX
             </div>
-            <p className="text-neutral-400 leading-relaxed">
+            <p className="text-neutral-400 leading-relaxed text-sm sm:text-base">
               Sua parceira estratégica para transformação digital. 
               Cuidamos do seu negócio no mundo digital.
             </p>
@@ -33,7 +33,7 @@ const Footer = () => {
           {/* Services */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-neutral-100">Serviços</h3>
-            <ul className="space-y-2 text-neutral-400">
+            <ul className="space-y-2 text-neutral-400 text-sm sm:text-base">
               <li><a href="#" className="hover:text-primary transition-colors">Automação de Processos</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Tráfego Pago</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">CRM e Gestão</a></li>
@@ -45,7 +45,7 @@ const Footer = () => {
           {/* Company */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-neutral-100">Empresa</h3>
-            <ul className="space-y-2 text-neutral-400">
+            <ul className="space-y-2 text-neutral-400 text-sm sm:text-base">
               <li><a href="#sobre" className="hover:text-primary transition-colors">Sobre a MugiX</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Nossa Metodologia</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Cases de Sucesso</a></li>
@@ -57,7 +57,7 @@ const Footer = () => {
           {/* Contact */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-neutral-100">Contato</h3>
-            <div className="space-y-3">
+            <div className="space-y-3 text-sm sm:text-base">
               <a 
                 href="https://wa.me/5511999999999" 
                 className="flex items-center gap-3 text-neutral-400 hover:text-primary transition-colors"
@@ -82,10 +82,10 @@ const Footer = () => {
 
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-neutral-400 text-sm">
+            <p className="text-neutral-400 text-sm text-center md:text-left">
               © 2024 MugiX. Todos os direitos reservados.
             </p>
-            <div className="flex gap-6 text-sm text-neutral-400">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm text-neutral-400">
               <a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a>
               <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
               <a href="#" className="hover:text-primary transition-colors">LGPD</a>
