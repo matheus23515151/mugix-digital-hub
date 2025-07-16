@@ -14,47 +14,92 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-background/95 backdrop-blur-sm border-b border-neutral-200 sticky top-0 z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 max-w-7xl">
+    <header className="bg-background/80 backdrop-blur-md border-b border-border/50 sticky top-0 z-50 transition-all duration-300">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-7xl">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Link to="/" className="flex items-center hover:opacity-90 transition-opacity">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center group transition-all duration-300 hover:scale-105">
               <img 
                 src="/lovable-uploads/1752533e-5716-4436-9af7-42f011461172.png" 
                 alt="MugiX - Automação e Performance Digital" 
-                className="h-16 sm:h-20 w-auto"
+                className="h-12 sm:h-14 w-auto transition-all duration-300 group-hover:brightness-110"
               />
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <Link to="/sobre" className={`text-sm lg:text-base transition-colors ${isActive('/sobre') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`}>
+          <nav className="hidden md:flex items-center space-x-8 lg:space-x-10">
+            <Link 
+              to="/sobre" 
+              className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:scale-105 ${
+                isActive('/sobre') 
+                  ? 'text-primary after:w-full' 
+                  : 'text-muted-foreground hover:text-foreground'
+              } after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                isActive('/sobre') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+              }`}
+            >
               Sobre
             </Link>
-            <Link to="/servicos" className={`text-sm lg:text-base transition-colors ${isActive('/servicos') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`}>
+            <Link 
+              to="/servicos" 
+              className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:scale-105 ${
+                isActive('/servicos') 
+                  ? 'text-primary after:w-full' 
+                  : 'text-muted-foreground hover:text-foreground'
+              } after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                isActive('/servicos') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+              }`}
+            >
               Serviços
             </Link>
-            <Link to="/diferenciais" className={`text-sm lg:text-base transition-colors ${isActive('/diferenciais') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`}>
+            <Link 
+              to="/diferenciais" 
+              className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:scale-105 ${
+                isActive('/diferenciais') 
+                  ? 'text-primary after:w-full' 
+                  : 'text-muted-foreground hover:text-foreground'
+              } after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                isActive('/diferenciais') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+              }`}
+            >
               Diferenciais
             </Link>
-            <Link to="/agendamento" className={`text-sm lg:text-base transition-colors ${isActive('/agendamento') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`}>
-              Agende uma Reunião
+            <Link 
+              to="/agendamento" 
+              className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:scale-105 ${
+                isActive('/agendamento') 
+                  ? 'text-primary after:w-full' 
+                  : 'text-muted-foreground hover:text-foreground'
+              } after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                isActive('/agendamento') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+              }`}
+            >
+              Agendar Reunião
             </Link>
           </nav>
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
             <Button 
-              variant="hero" 
-              size="default" 
-              className="hidden md:flex items-center gap-2 text-sm lg:text-base"
+              variant="default" 
+              size="sm" 
+              className="hidden md:flex items-center gap-2 text-sm font-medium px-6 py-2 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
             >
-              <MessageCircle className="w-4 h-4 icon-hover icon-pulse" />
+              <MessageCircle className="w-4 h-4" />
               WhatsApp
             </Button>
             <div className="md:hidden">
-              <Button onClick={toggleMobileMenu} variant="outline" size="icon">
-                {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6 icon-hover icon-rotate" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6 icon-hover icon-bounce" />}
+              <Button 
+                onClick={toggleMobileMenu} 
+                variant="ghost" 
+                size="icon"
+                className="rounded-full hover:bg-accent transition-all duration-300 hover:scale-110"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-5 w-5 transition-transform duration-300 rotate-90" />
+                ) : (
+                  <Menu className="h-5 w-5 transition-transform duration-300" />
+                )}
               </Button>
             </div>
           </div>
