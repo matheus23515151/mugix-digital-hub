@@ -22,7 +22,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/1752533e-5716-4436-9af7-42f011461172.png" 
                 alt="MugiX - Automação e Performance Digital" 
-                className="h-12 sm:h-14 w-auto"
+                className="h-16 sm:h-20 w-auto"
               />
             </Link>
           </div>
