@@ -57,26 +57,43 @@ const Header = () => {
           </div>
         </div>
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-neutral-200 pt-4">
-            <nav className="flex flex-col space-y-4">
-              <Link to="/sobre" className={`transition-colors text-base ${isActive('/sobre') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`} onClick={toggleMobileMenu}>
-                Sobre
-              </Link>
-              <Link to="/servicos" className={`transition-colors text-base ${isActive('/servicos') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`} onClick={toggleMobileMenu}>
-                Serviços
-              </Link>
-              <Link to="/diferenciais" className={`transition-colors text-base ${isActive('/diferenciais') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`} onClick={toggleMobileMenu}>
-                Diferenciais
-              </Link>
-              <Button 
-                variant="hero" 
-                size="default" 
-                className="flex items-center gap-2 w-full mt-4"
-                onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
+          <div className="md:hidden mt-4 pb-4 border-t border-neutral-200 pt-4 bg-background/95 backdrop-blur-sm rounded-lg shadow-lg">
+            <nav className="flex flex-col space-y-3">
+              <Link 
+                to="/sobre" 
+                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/sobre') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                onClick={toggleMobileMenu}
               >
-                <MessageCircle className="w-4 h-4 icon-hover icon-pulse" />
-                WhatsApp
-              </Button>
+                📖 Sobre
+              </Link>
+              <Link 
+                to="/servicos" 
+                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/servicos') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                onClick={toggleMobileMenu}
+              >
+                ⚙️ Serviços
+              </Link>
+              <Link 
+                to="/diferenciais" 
+                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/diferenciais') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                onClick={toggleMobileMenu}
+              >
+                ⭐ Diferenciais
+              </Link>
+              <div className="pt-2 border-t border-neutral-200 mt-3">
+                <Button 
+                  variant="hero" 
+                  size="default" 
+                  className="flex items-center gap-2 w-full justify-center"
+                  onClick={() => {
+                    window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank');
+                    toggleMobileMenu();
+                  }}
+                >
+                  <MessageCircle className="w-4 h-4 icon-hover icon-pulse" />
+                  Falar via WhatsApp
+                </Button>
+              </div>
             </nav>
           </div>
         )}
