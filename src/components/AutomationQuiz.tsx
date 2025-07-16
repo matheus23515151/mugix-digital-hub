@@ -115,19 +115,19 @@ const AutomationQuiz = () => {
                 </div>
 
                 {/* Navigation */}
-                <div className="flex flex-col sm:flex-row justify-between pt-4 gap-2">
+                <div className="flex flex-col sm:flex-row justify-between items-center pt-4 gap-4">
                   <Button
                     variant="ghost"
                     onClick={() => setCurrentQuestion(Math.max(0, currentQuestion - 1))}
                     disabled={currentQuestion === 0}
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 w-full sm:w-auto justify-center"
                   >
                     <ChevronLeft className="w-4 h-4" />
                     Anterior
                   </Button>
 
                   {currentQuestion === questions.length - 1 && answers[currentQuestion] && (
-                    <Button variant="cta" className="flex items-center gap-2">
+                    <Button variant="cta" className="flex items-center gap-2 w-full sm:w-auto justify-center">
                       Ver Recomendações
                       <Zap className="w-4 h-4" />
                     </Button>
@@ -137,7 +137,7 @@ const AutomationQuiz = () => {
                     variant="ghost"
                     onClick={() => setCurrentQuestion(Math.min(questions.length - 1, currentQuestion + 1))}
                     disabled={currentQuestion === questions.length - 1 || !answers[currentQuestion]}
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 w-full sm:w-auto justify-center"
                   >
                     Próxima
                     <ChevronRight className="w-4 h-4" />

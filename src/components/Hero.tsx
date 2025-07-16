@@ -4,8 +4,8 @@ import heroImage from "@/assets/mugix-hero.jpg";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-hero py-20 lg:py-32">
-      <div className="container mx-auto px-4">
+    <section className="bg-gradient-hero py-20 lg:py-32 overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up text-center lg:text-left">
             <div className="space-y-4">
@@ -54,7 +54,7 @@ const Hero = () => {
             <img
               src={heroImage}
               alt="Automação de processos MugiX"
-              className="w-full h-auto rounded-2xl shadow-xl hover-glow transition-all duration-300"
+              className="w-full h-auto rounded-2xl transition-all duration-300 lg:shadow-xl lg:hover-glow"
             />
             
             {/* Floating automation indicators */}

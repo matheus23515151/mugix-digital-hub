@@ -93,12 +93,12 @@ const ProcessTimeline = () => {
                 ></div>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row justify-between pt-4 gap-2">
+            <div className="flex flex-col sm:flex-row justify-between pt-4 gap-4">
               <Button
                 variant="outline"
                 onClick={() => setActiveStep(Math.max(0, steps.indexOf(step) - 1))}
                 disabled={steps.indexOf(step) === 0}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto justify-center"
               >
                 Etapa Anterior
               </Button>
@@ -106,7 +106,7 @@ const ProcessTimeline = () => {
                 variant="outline"
                 onClick={() => setActiveStep(Math.min(steps.length - 1, steps.indexOf(step) + 1))}
                 disabled={steps.indexOf(step) === steps.length - 1}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto justify-center"
               >
                 Próxima Etapa
               </Button>

@@ -98,7 +98,7 @@ const BeforeAfter = () => {
           </div>
 
           {/* Scenario Selector */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-12">
             {scenarios.map((scenario, index) => {
               const ScenarioIcon = scenario.icon;
               return (
