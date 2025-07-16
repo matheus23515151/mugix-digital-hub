@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Differentials from "@/components/Differentials";
 import SocialProof from "@/components/SocialProof";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -24,6 +25,7 @@ const Index = () => {
       <Services />
       <Differentials />
       <SocialProof />
+      <FAQ />
       <CTA />
       <Footer />
     </div>
