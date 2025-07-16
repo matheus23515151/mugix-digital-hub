@@ -44,7 +44,7 @@ const AutomationShowcase = () => {
   ];
 
   return (
-    <section ref={parallaxRef} className="py-20 bg-background relative overflow-hidden">
+    <section ref={parallaxRef} className="py-12 sm:py-16 lg:py-20 bg-background relative overflow-hidden">
       {/* Parallax Background Pattern */}
       <div 
         className="absolute inset-0 opacity-5 parallax-slow" 
@@ -57,44 +57,44 @@ const AutomationShowcase = () => {
       
       <div className="container mx-auto px-4 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900">
+          <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
               O que Podemos <span className="text-primary">Automatizar</span> para Você?
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto">
               Transformamos processos manuais em sistemas inteligentes que trabalham 24/7 para o seu negócio
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 place-items-center lg:place-items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 place-items-center lg:place-items-stretch">
             {automationAreas.map((area, index) => {
               const IconComponent = area.icon;
               return (
                 <Card 
                   key={index} 
-                  className={`group relative overflow-hidden border-neutral-200 hover:border-primary/50 transition-all duration-500 hover-lift animate-fade-in-up stagger-${index + 1} w-full max-w-sm lg:max-w-none ${index >= 3 ? 'md:col-start-2 lg:col-start-auto' : ''}`}
+                  className={`group relative overflow-hidden border-neutral-200 hover:border-primary/50 transition-all duration-500 hover-lift animate-fade-in-up stagger-${index + 1} w-full max-w-sm lg:max-w-none ${index >= 4 ? 'sm:col-span-2 sm:max-w-sm sm:mx-auto lg:col-span-1 lg:max-w-none' : ''}`}
                 >
                   {/* Gradient Background on Hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${area.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                   
-                  <CardHeader className="relative">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-4 icon-container icon-float stagger-${index + 1}`}>
-                      <IconComponent className="w-8 h-8 text-white icon-hover icon-glow" />
+                  <CardHeader className="relative p-4 sm:p-6">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-lg sm:rounded-xl lg:rounded-2xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-3 sm:mb-4 icon-container icon-float stagger-${index + 1}`}>
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white icon-hover icon-glow" />
                     </div>
-                    <CardTitle className="text-xl text-neutral-900 group-hover:text-primary transition-colors duration-300">
+                    <CardTitle className="text-lg sm:text-xl text-neutral-900 group-hover:text-primary transition-colors duration-300">
                       {area.title}
                     </CardTitle>
                   </CardHeader>
                   
-                  <CardContent className="relative space-y-4">
-                    <p className="text-neutral-600">
+                  <CardContent className="relative space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                    <p className="text-sm sm:text-base text-neutral-600">
                       {area.description}
                     </p>
                     
-                    <ul className="space-y-2">
+                    <ul className="space-y-1.5 sm:space-y-2">
                       {area.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-neutral-600">
-                          <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${area.color}`}></div>
+                        <li key={featureIndex} className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600">
+                          <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-r ${area.color} flex-shrink-0`}></div>
                           {feature}
                         </li>
                       ))}
@@ -102,10 +102,10 @@ const AutomationShowcase = () => {
                     
                     <Button 
                       variant="ghost" 
-                      className="w-full justify-between group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                      className="w-full justify-between group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 text-xs sm:text-sm"
                     >
                       Explorar automação
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </CardContent>
                 </Card>
@@ -116,13 +116,13 @@ const AutomationShowcase = () => {
           {/* Central CTA */}
           <div className="text-center animate-fade-in-up">
             <Card className="max-w-4xl mx-auto bg-gradient-hero border-primary/20 shadow-xl">
-              <CardContent className="p-8 sm:p-12">
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900">
+              <CardContent className="p-4 sm:p-6 lg:p-8 xl:p-12">
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-900">
                       Não viu seu processo aqui?
                     </h3>
-                    <p className="text-lg sm:text-xl text-neutral-600">
+                    <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-neutral-600">
                       Nenhum problema! Criamos automações personalizadas para qualquer processo repetitivo do seu negócio.
                     </p>
                   </div>

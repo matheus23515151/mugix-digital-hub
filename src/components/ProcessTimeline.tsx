@@ -60,22 +60,22 @@ const ProcessTimeline = () => {
   const StepDetails = ({ step, isActive }) => (
     <div className={`lg:sticky lg:top-28 ${isActive ? '' : 'lg:hidden'}`}>
       <Card className="border-primary/20 shadow-xl animate-scale-in">
-        <CardContent className="p-8">
-          <div className="space-y-6">
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          <div className="space-y-4 sm:space-y-6">
             <div className="text-center">
-              <div className="text-6xl mb-4 animate-float">{step.icon}</div>
-              <h3 className="text-2xl font-bold text-neutral-900 mb-2">{step.title}</h3>
-              <p className="text-primary font-medium">Duração: {step.duration}</p>
+              <div className="text-3xl sm:text-4xl lg:text-6xl mb-3 sm:mb-4 animate-float">{step.icon}</div>
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900 mb-2">{step.title}</h3>
+              <p className="text-sm sm:text-base text-primary font-medium">Duração: {step.duration}</p>
             </div>
-            <div className="space-y-4">
-              <p className="text-neutral-600 leading-relaxed">{step.description}</p>
-              <div className="space-y-3">
-                <h4 className="font-semibold text-neutral-900">O que fazemos nesta etapa:</h4>
-                <ul className="space-y-2">
+            <div className="space-y-3 sm:space-y-4">
+              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">{step.description}</p>
+              <div className="space-y-2 sm:space-y-3">
+                <h4 className="text-sm sm:text-base font-semibold text-neutral-900">O que fazemos nesta etapa:</h4>
+                <ul className="space-y-1.5 sm:space-y-2">
                   {step.details.map((detail, index) => (
-                    <li key={index} className={`flex items-start gap-3 animate-fade-in-up stagger-${index + 1}`}>
-                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-neutral-700">{detail}</span>
+                    <li key={index} className={`flex items-start gap-2 sm:gap-3 animate-fade-in-up stagger-${index + 1}`}>
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm lg:text-base text-neutral-700">{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -114,12 +114,12 @@ const ProcessTimeline = () => {
           </div>
         </CardContent>
       </Card>
-      <Card className="mt-6 bg-gradient-primary text-primary-foreground">
-        <CardContent className="p-6 sm:p-8 text-center">
-          <div className="max-w-md mx-auto space-y-4">
-            <h4 className="text-lg sm:text-xl font-semibold">Pronto para começar?</h4>
-            <p className="text-primary-foreground/90">Agende seu diagnóstico gratuito agora mesmo</p>
-            <Button variant="outline" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+      <Card className="mt-4 sm:mt-6 bg-gradient-primary text-primary-foreground">
+        <CardContent className="p-4 sm:p-6 lg:p-8 text-center">
+          <div className="max-w-md mx-auto space-y-3 sm:space-y-4">
+            <h4 className="text-base sm:text-lg lg:text-xl font-semibold">Pronto para começar?</h4>
+            <p className="text-sm sm:text-base text-primary-foreground/90">Agende seu diagnóstico gratuito agora mesmo</p>
+            <Button variant="outline" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-sm sm:text-base">
               <MessageCircle className="w-4 h-4 mr-2" />
               Começar Diagnóstico
             </Button>
@@ -130,19 +130,19 @@ const ProcessTimeline = () => {
   );
 
   return (
-    <section className="py-20 bg-neutral-50">
+    <section className="py-12 sm:py-16 lg:py-20 bg-neutral-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900">
+          <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
               Como Funciona o <span className="text-primary">Processo MugiX</span>
             </h2>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto">
               Do diagnóstico ao resultado: um processo transparente e eficiente
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
             {/* Timeline Navigation */}
             <div className="space-y-4">
               {steps.map((step, index) => (
@@ -155,10 +155,10 @@ const ProcessTimeline = () => {
                     } animate-fade-in-left stagger-${index + 1}`}
                     onClick={() => setActiveStep(index)}
                   >
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-4">
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="flex items-center gap-3 sm:gap-4">
                         <div
-                          className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl transition-all duration-300 ${
+                          className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-lg sm:text-2xl transition-all duration-300 ${
                             activeStep === index
                               ? "bg-gradient-primary text-primary-foreground"
                               : "bg-neutral-200 text-neutral-600"
@@ -168,12 +168,12 @@ const ProcessTimeline = () => {
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-1">
-                            <h3 className={`font-semibold ${activeStep === index ? "text-primary" : "text-neutral-900"}`}>
+                            <h3 className={`text-sm sm:text-base font-semibold ${activeStep === index ? "text-primary" : "text-neutral-900"}`}>
                               {step.title}
                             </h3>
-                            <span className="text-sm text-neutral-500 hidden sm:block">{step.duration}</span>
+                            <span className="text-xs sm:text-sm text-neutral-500 hidden sm:block">{step.duration}</span>
                           </div>
-                          <p className="text-neutral-600 text-sm">{step.description}</p>
+                          <p className="text-neutral-600 text-xs sm:text-sm leading-tight">{step.description}</p>
                         </div>
                         <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 lg:hidden ${activeStep === index ? 'rotate-180' : ''}`} />
                       </div>

@@ -54,14 +54,14 @@ const SocialProof = () => {
         {/* Stats Section */}
         <div 
           ref={statsRef}
-          className={`grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 scroll-animate ${statsVisible ? 'animate-in' : ''}`}
+          className={`grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 xl:gap-8 mb-8 sm:mb-12 lg:mb-16 scroll-animate ${statsVisible ? 'animate-in' : ''}`}
         >
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-4 sm:p-6 bg-background rounded-xl sm:rounded-2xl border border-neutral-200 interactive-card">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-1 sm:mb-2">
+            <div key={index} className="text-center p-3 sm:p-4 lg:p-6 bg-background rounded-lg sm:rounded-xl lg:rounded-2xl border border-neutral-200 interactive-card">
+              <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-primary mb-1 sm:mb-2">
                 {stat.number}
               </div>
-              <div className="text-xs sm:text-sm lg:text-base text-neutral-600 font-medium">
+              <div className="text-xs sm:text-sm lg:text-base text-neutral-600 font-medium leading-tight">
                 {stat.label}
               </div>
             </div>
@@ -71,11 +71,11 @@ const SocialProof = () => {
         {/* Testimonials Section */}
         <div 
           ref={testimonialsRef}
-          className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 scroll-animate ${testimonialsVisible ? 'animate-in' : ''}`}
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12 scroll-animate ${testimonialsVisible ? 'animate-in' : ''}`}
         >
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border-neutral-200 hover:shadow-lg transition-all duration-300 interactive-card">
-              <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+              <CardContent className="p-3 sm:p-4 lg:p-6 space-y-2 sm:space-y-3 lg:space-y-4">
                 <div className="flex items-center gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400" />
@@ -83,14 +83,14 @@ const SocialProof = () => {
                 </div>
                 
                 <div className="relative">
-                  <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-primary opacity-20 absolute -top-1 sm:-top-2 -left-1 sm:-left-2" />
-                  <p className="text-sm sm:text-base text-neutral-700 italic leading-relaxed pl-3 sm:pl-4">
+                  <Quote className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-primary opacity-20 absolute -top-1 sm:-top-2 -left-1 sm:-left-2" />
+                  <p className="text-xs sm:text-sm lg:text-base text-neutral-700 italic leading-relaxed pl-2 sm:pl-3 lg:pl-4">
                     "{testimonial.content}"
                   </p>
                 </div>
                 
-                <div className="pt-3 sm:pt-4 border-t border-neutral-200">
-                  <div className="text-sm sm:text-base font-semibold text-neutral-900">
+                <div className="pt-2 sm:pt-3 lg:pt-4 border-t border-neutral-200">
+                  <div className="text-xs sm:text-sm lg:text-base font-semibold text-neutral-900">
                     {testimonial.name}
                   </div>
                   <div className="text-xs sm:text-sm text-neutral-600">

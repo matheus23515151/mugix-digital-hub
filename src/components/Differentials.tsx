@@ -48,19 +48,19 @@ const Differentials = () => {
             ref={contentRef}
             className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center scroll-animate ${contentVisible ? 'animate-in' : ''}`}
           >
-            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1">
               {differentials.map((differential, index) => {
                 const IconComponent = differential.icon;
                 return (
-                  <div key={index} className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-neutral-50 rounded-xl sm:rounded-2xl hover:bg-gradient-subtle transition-all duration-300 interactive-card">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 icon-container icon-float">
-                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground icon-hover icon-glow" />
+                  <div key={index} className="flex gap-3 sm:gap-4 p-3 sm:p-4 lg:p-6 bg-neutral-50 rounded-lg sm:rounded-xl lg:rounded-2xl hover:bg-gradient-subtle transition-all duration-300 interactive-card">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 icon-container icon-float">
+                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-primary-foreground icon-hover icon-glow" />
                     </div>
                     <div className="space-y-1 sm:space-y-2">
-                      <h3 className="text-lg sm:text-xl font-semibold text-neutral-900">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-neutral-900 leading-tight">
                         {differential.title}
                       </h3>
-                      <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
+                      <p className="text-xs sm:text-sm lg:text-base text-neutral-600 leading-relaxed">
                         {differential.description}
                       </p>
                     </div>
@@ -80,21 +80,21 @@ const Differentials = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">98%</div>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
+                <div className="bg-background p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary mb-1 sm:mb-2">98%</div>
                   <div className="text-xs sm:text-sm text-neutral-600">Taxa de Satisfação</div>
                 </div>
-                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">24h</div>
+                <div className="bg-background p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary mb-1 sm:mb-2">24h</div>
                   <div className="text-xs sm:text-sm text-neutral-600">Tempo de Resposta</div>
                 </div>
-                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">+150%</div>
+                <div className="bg-background p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary mb-1 sm:mb-2">+150%</div>
                   <div className="text-xs sm:text-sm text-neutral-600">ROI Médio</div>
                 </div>
-                <div className="bg-background p-4 sm:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">∞</div>
+                <div className="bg-background p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl border border-neutral-200 text-center">
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary mb-1 sm:mb-2">∞</div>
                   <div className="text-xs sm:text-sm text-neutral-600">Suporte Ilimitado</div>
                 </div>
               </div>

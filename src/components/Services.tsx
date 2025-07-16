@@ -68,33 +68,33 @@ const Services = () => {
 
         <div 
           ref={servicesRef}
-          className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 scroll-animate ${servicesVisible ? 'animate-in' : ''}`}
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 scroll-animate ${servicesVisible ? 'animate-in' : ''}`}
         >
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <Card key={index} className="border-neutral-200 hover:shadow-lg transition-all duration-300 group interactive-card">
-                <CardHeader className="space-y-3 sm:space-y-4 p-4 sm:p-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center icon-container icon-bounce">
-                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground icon-hover icon-glow" />
+                <CardHeader className="space-y-2 sm:space-y-3 lg:space-y-4 p-3 sm:p-4 lg:p-6">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center icon-container icon-bounce">
+                    <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-primary-foreground icon-hover icon-glow" />
                   </div>
-                  <CardTitle className="text-lg sm:text-xl text-neutral-900">
+                  <CardTitle className="text-base sm:text-lg lg:text-xl text-neutral-900 leading-tight">
                     {service.title}
                   </CardTitle>
-                  <CardDescription className="text-sm sm:text-base text-neutral-600">
+                  <CardDescription className="text-xs sm:text-sm lg:text-base text-neutral-600 leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
-                  <ul className="space-y-2">
+                <CardContent className="space-y-2 sm:space-y-3 lg:space-y-4 p-3 sm:p-4 lg:p-6 pt-0">
+                  <ul className="space-y-1 sm:space-y-1.5 lg:space-y-2">
                     {service.benefits.map((benefit, benefitIndex) => (
                       <li key={benefitIndex} className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                        <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-primary rounded-full flex-shrink-0"></div>
                         {benefit}
                       </li>
                     ))}
                   </ul>
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-xs sm:text-sm">
+                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-xs sm:text-sm py-2">
                     Saiba mais
                     <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                   </Button>
