@@ -117,9 +117,9 @@ const AutomationShowcase = () => {
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
                     <Button variant="cta" size="lg" className="flex items-center gap-2 hover-glow w-full sm:w-auto">
-                      <Bot className="w-5 h-5" />
+                      <Bot className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                       Descobrir Meu Potencial de Automação
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                     </Button>
                     
                     <div className="text-sm text-neutral-500 mt-2 sm:mt-0">
