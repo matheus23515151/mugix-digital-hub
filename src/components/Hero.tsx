@@ -27,27 +27,32 @@ const Hero = () => {
               className={`space-y-4 scroll-animate ${titleVisible ? 'animate-in' : ''}`}
             >
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 leading-tight">
-                <span className="block">Automatize seu negócio e</span>
+                <span className="block">Cansado de perder tempo com</span>
                 <span className="bg-gradient-primary bg-clip-text text-transparent block">
-                  multiplique resultados
+                  tarefas repetitivas?
                 </span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Transformamos processos manuais em sistemas inteligentes. Mais tempo para estratégia, 
-                menos tempo perdido com tarefas repetitivas.
+                Pare de desperdiçar horas em processos manuais. Nossa automação inteligente com IA humanizada 
+                libera você para focar no que realmente importa: crescer seu negócio.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-              <Button variant="cta" size="lg" className="flex items-center gap-2 w-full sm:w-auto">
+              <Button 
+                variant="cta" 
+                size="lg" 
+                className="flex items-center gap-2 w-full sm:w-auto"
+                onClick={() => window.open('/agendamento', '_self')}
+              >
                 <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span className="text-sm sm:text-base">Descobrir potencial de automação</span>
+                <span className="text-sm sm:text-base">Quero parar de perder tempo</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
               
               <Button variant="outline-hero" size="lg" className="flex items-center gap-2 w-full sm:w-auto">
                 <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span className="text-sm sm:text-base">Ver transformações reais</span>
+                <span className="text-sm sm:text-base">Ver casos de sucesso</span>
               </Button>
             </div>
 

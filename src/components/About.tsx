@@ -15,12 +15,12 @@ const About = () => {
             className={`space-y-3 sm:space-y-4 scroll-animate ${headerVisible ? 'animate-in' : ''}`}
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
-              Somos a <span className="text-primary">MugiX</span>
+              Não somos uma ferramenta, somos sua <span className="text-primary">empresa parceira</span>
             </h2>
             <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4 sm:px-0">
-              Não somos mais uma ferramenta no mercado. Somos sua parceira estratégica 
-              no mundo digital, criando soluções sob medida que realmente funcionam 
-              para o seu negócio.
+              Enquanto outros vendem software, nós desenvolvemos uma jornada personalizada lado a lado com você. 
+              Nossa automação inteligente com IA humanizada resolve suas dores específicas, 
+              não problemas genéricos.
             </p>
           </div>
 
@@ -33,11 +33,11 @@ const About = () => {
                 <Users className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-neutral-900">
-                Atendimento Humano
+                IA Humanizada Real
               </h3>
               <p className="text-sm sm:text-base text-neutral-600">
-                Nada de chatbots ou respostas automáticas. Você fala diretamente 
-                com especialistas que entendem do seu negócio.
+                Nossa automação inteligente com IA humanizada não substitui pessoas - 
+                libera sua equipe das tarefas repetitivas para focar no que gera resultado.
               </p>
             </div>
 
@@ -73,9 +73,8 @@ const About = () => {
             className={`bg-gradient-subtle p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-neutral-200 mx-4 sm:mx-0 scroll-animate ${quoteVisible ? 'animate-in' : ''}`}
           >
             <blockquote className="text-base sm:text-lg text-neutral-700 italic">
-              "Na MugiX, acreditamos que tecnologia sem estratégia é apenas uma ferramenta cara. 
-              Por isso, combinamos inovação com consultoria especializada para transformar 
-              seu negócio de verdade."
+              "Nós não entregamos uma solução pronta — desenvolvemos uma jornada personalizada lado a lado com você. 
+              Sua dor vira nossa missão, seu crescimento vira nosso sucesso."
             </blockquote>
           </div>
         </div>

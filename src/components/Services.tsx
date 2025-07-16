@@ -13,33 +13,33 @@ const Services = () => {
   const services = [
     {
       icon: Bot,
-      title: "Automação de Processos",
-      description: "Automatize tarefas repetitivas e otimize fluxos de trabalho para sua equipe focar no que realmente importa.",
-      benefits: ["Redução de 80% em tarefas manuais", "Integração completa entre sistemas", "Workflows personalizados"]
+      title: "Automação Inteligente com IA Humanizada",
+      description: "Chega de perder horas em tarefas repetitivas. Nossa IA resolve processos manuais que drenam seu tempo e recursos.",
+      benefits: ["Elimina 80% das tarefas repetitivas", "IA que funciona 24/7 sem erros", "Processos que se adaptam ao seu negócio"]
     },
     {
       icon: TrendingUp,
-      title: "Tráfego Pago",
-      description: "Campanhas estratégicas no Google Ads, Facebook e Instagram que geram leads qualificados e vendas.",
-      benefits: ["ROI acima da média do mercado", "Segmentação precisa", "Otimização contínua"]
+      title: "Tráfego Pago que Converte",
+      description: "Pare de queimar dinheiro em anúncios que não funcionam. Criamos campanhas que trazem clientes, não apenas cliques.",
+      benefits: ["ROI real, não métricas vazias", "Leads qualificados prontos para comprar", "Fim do desperdício em anúncios"]
     },
     {
       icon: Users,
-      title: "CRM e Gestão de Relacionamento",
-      description: "Organize, nutra e converta seus leads com sistemas de CRM personalizados para seu negócio.",
-      benefits: ["Funil de vendas otimizado", "Follow-up automatizado", "Relatórios detalhados"]
+      title: "CRM que Vende no Automático",
+      description: "Cansado de perder leads por falta de follow-up? Nosso CRM nutre e converte enquanto você dorme.",
+      benefits: ["Nunca mais perde um lead", "Follow-up automático e personalizado", "Vendas 24 horas por dia"]
     },
     {
       icon: Palette,
-      title: "Design Estratégico",
-      description: "Design que converte: desde landing pages até materiais de marketing alinhados com sua estratégia.",
-      benefits: ["Design orientado a conversão", "Identidade visual consistente", "UX/UI otimizada"]
+      title: "Design que Converte",
+      description: "Sites bonitos que não vendem são apenas cartões de visita caros. Criamos designs que transformam visitantes em clientes.",
+      benefits: ["Páginas que aumentam vendas", "Design focado em resultados", "Experiência que converte"]
     },
     {
       icon: MessageSquare,
-      title: "Disparos em Massa via WhatsApp",
-      description: "Alcance sua audiência de forma direta e pessoal com campanhas automatizadas no WhatsApp.",
-      benefits: ["98% de taxa de abertura", "Segmentação avançada", "Compliance garantido"]
+      title: "WhatsApp Marketing Humanizado",
+      description: "Alcance seus clientes onde eles estão, de forma natural e sem spam. Marketing direto que funciona.",
+      benefits: ["98% de taxa de abertura", "Comunicação personalizada e natural", "Relacionamento genuíno com clientes"]
     }
   ];
 
@@ -59,10 +59,10 @@ const Services = () => {
           className={`text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16 scroll-animate ${headerVisible ? 'animate-in' : ''}`}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
-            Nossos <span className="text-primary">Serviços</span>
+            Como resolvemos suas <span className="text-primary">principais dores</span>
           </h2>
           <p className="text-lg sm:text-xl text-neutral-600 max-w-3xl mx-auto px-4 sm:px-0">
-            Soluções digitais completas e personalizadas para acelerar o crescimento do seu negócio
+            Cada serviço foi criado para eliminar um problema específico que impede seu negócio de crescer
           </p>
         </div>
 
@@ -110,13 +110,18 @@ const Services = () => {
         >
           <div className="bg-background p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-neutral-200 inline-block mx-4 sm:mx-0">
             <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 mb-2">
-              Precisa de algo específico?
+              Sua dor é única? Nós criamos a solução
             </h3>
             <p className="text-sm sm:text-base text-neutral-600 mb-3 sm:mb-4">
-              Criamos soluções personalizadas para desafios únicos
+              Desenvolvemos automação inteligente personalizada para resolver o problema específico do seu negócio
             </p>
-            <Button variant="outline-hero" size="lg" className="text-sm sm:text-base">
-              Vamos conversar sobre seu projeto
+            <Button 
+              variant="outline-hero" 
+              size="lg" 
+              className="text-sm sm:text-base"
+              onClick={() => window.open('/agendamento', '_self')}
+            >
+              Vamos resolver sua dor específica
             </Button>
           </div>
         </div>

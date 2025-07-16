@@ -37,6 +37,9 @@ const Header = () => {
             <Link to="/diferenciais" className={`text-sm lg:text-base transition-colors ${isActive('/diferenciais') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`}>
               Diferenciais
             </Link>
+            <Link to="/agendamento" className={`text-sm lg:text-base transition-colors ${isActive('/agendamento') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`}>
+              Agende uma Reunião
+            </Link>
           </nav>
 
           <div className="flex items-center">
@@ -79,6 +82,13 @@ const Header = () => {
                 onClick={toggleMobileMenu}
               >
                 ⭐ Diferenciais
+              </Link>
+              <Link 
+                to="/agendamento" 
+                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/agendamento') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                onClick={toggleMobileMenu}
+              >
+                📅 Agende uma Reunião
               </Link>
               <div className="pt-2 border-t border-neutral-200 mt-3">
                 <Button 

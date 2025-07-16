@@ -24,21 +24,21 @@ const CTA = () => {
         >
           <div className="space-y-3 sm:space-y-4">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
-              Pronto para <span className="text-primary">Transformar</span> seu Negócio?
+              Chega de perder <span className="text-primary">tempo e dinheiro</span> com processos manuais
             </h2>
             <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4 sm:px-0">
-              Não deixe seus concorrentes saírem na frente. Comece hoje mesmo sua jornada 
-              de transformação digital com quem realmente entende do seu negócio.
+              Seus concorrentes já estão automatizando. Não fique para trás perdendo horas em tarefas 
+              que nossa IA humanizada faz em segundos. Comece sua transformação hoje.
             </p>
           </div>
 
           <div className="bg-background p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-neutral-200 space-y-4 sm:space-y-6 mx-4 sm:mx-0">
             <h3 className="text-xl sm:text-2xl font-semibold text-neutral-900">
-              Conversa gratuita de 30 minutos
+              Diagnóstico gratuito: descubra quanto tempo você está perdendo
             </h3>
             <p className="text-sm sm:text-base text-neutral-600">
-              Vamos entender seus desafios e mostrar como podemos ajudar, 
-              sem compromisso e totalmente gratuito.
+              Em 30 minutos, identificamos suas principais dores e mostramos exatamente 
+              como nossa automação inteligente pode resolver, sem compromisso.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -53,9 +53,14 @@ const CTA = () => {
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 icon-hover" />
               </Button>
               
-              <Button variant="outline-hero" size="lg" className="flex items-center gap-2 w-full sm:w-auto">
+              <Button 
+                variant="outline-hero" 
+                size="lg" 
+                className="flex items-center gap-2 w-full sm:w-auto"
+                onClick={() => window.open('/agendamento', '_self')}
+              >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-rotate" />
-                <span className="text-sm sm:text-base">Agendar Ligação</span>
+                <span className="text-sm sm:text-base">Agendar Reunião</span>
               </Button>
             </div>
           </div>
