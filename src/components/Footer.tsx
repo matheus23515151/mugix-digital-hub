@@ -7,9 +7,11 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand */}
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
-            <div className="bg-gradient-primary text-primary-foreground font-bold text-lg sm:text-xl px-3 py-1 rounded-lg inline-block">
-              MugiX
-            </div>
+            <img 
+              src="/lovable-uploads/1752533e-5716-4436-9af7-42f011461172.png" 
+              alt="MugiX - Automação e Performance Digital" 
+              className="h-6 sm:h-8 w-auto"
+            />
             <p className="text-neutral-400 leading-relaxed text-sm sm:text-base">
               Sua parceira estratégica para transformação digital. 
               Cuidamos do seu negócio no mundo digital.

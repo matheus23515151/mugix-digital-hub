@@ -18,8 +18,12 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 max-w-7xl">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Link to="/" className="bg-gradient-primary text-primary-foreground font-bold text-lg sm:text-xl px-2 sm:px-3 py-1 rounded-lg hover:opacity-90 transition-opacity">
-              MugiX
+            <Link to="/" className="flex items-center hover:opacity-90 transition-opacity">
+              <img 
+                src="/lovable-uploads/1752533e-5716-4436-9af7-42f011461172.png" 
+                alt="MugiX - Automação e Performance Digital" 
+                className="h-8 sm:h-10 w-auto"
+              />
             </Link>
           </div>
 
