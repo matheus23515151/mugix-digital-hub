@@ -59,11 +59,13 @@ const Footer = () => {
             <h3 className="text-base sm:text-lg font-semibold text-neutral-100">Contato</h3>
             <div className="space-y-3 text-sm sm:text-base">
               <a 
-                href="https://wa.me/5511999999999" 
+                href="https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX" 
                 className="flex items-center gap-2 sm:gap-3 text-neutral-400 hover:text-primary transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span>(11) 99999-9999</span>
+                <span>(62) 8154-0306</span>
               </a>
               <a 
                 href="mailto:contato@mugix.com.br" 

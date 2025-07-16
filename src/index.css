@@ -198,6 +198,15 @@ All colors MUST be HSL.
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
+  
+  /* WhatsApp specific styling */
+  .whatsapp-green {
+    background-color: #25D366;
+  }
+  
+  .whatsapp-green:hover {
+    background-color: #128C7E;
+  }
 
   .animate-float {
     animation: float 3s ease-in-out infinite;
@@ -297,4 +306,45 @@ All colors MUST be HSL.
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+
+  /* Consistent spacing and sizing for symmetry */
+  .section-padding {
+    @apply py-16 sm:py-20;
+  }
+  
+  .container-standard {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .card-padding {
+    @apply p-6 sm:p-8;
+  }
+  
+  .icon-standard {
+    @apply w-12 h-12 sm:w-16 sm:h-16;
+  }
+  
+  .icon-small {
+    @apply w-6 h-6 sm:w-8 sm:h-8;
+  }
+  
+  .title-standard {
+    @apply text-2xl sm:text-3xl font-bold text-neutral-900;
+  }
+  
+  .subtitle-standard {
+    @apply text-lg sm:text-xl text-neutral-600;
+  }
+  
+  .text-standard {
+    @apply text-sm sm:text-base text-neutral-600 leading-relaxed;
+  }
+  
+  .grid-standard {
+    @apply grid gap-6 sm:gap-8;
+  }
+  
+  .space-standard {
+    @apply space-y-6 sm:space-y-8;
+  }
 }

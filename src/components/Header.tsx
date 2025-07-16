@@ -36,9 +36,14 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center">
-            <Button variant="hero" size="default" className="hidden md:flex items-center gap-2 text-sm lg:text-base">
+            <Button 
+              variant="hero" 
+              size="default" 
+              className="hidden md:flex items-center gap-2 text-sm lg:text-base"
+              onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
+            >
               <MessageCircle className="w-4 h-4" />
-              Fale conosco
+              WhatsApp
             </Button>
             <div className="md:hidden">
               <Button onClick={toggleMobileMenu} variant="outline" size="icon">
@@ -59,9 +64,14 @@ const Header = () => {
               <Link to="/diferenciais" className={`transition-colors text-base ${isActive('/diferenciais') ? 'text-primary font-medium' : 'text-neutral-600 hover:text-primary'}`} onClick={toggleMobileMenu}>
                 Diferenciais
               </Link>
-              <Button variant="hero" size="default" className="flex items-center gap-2 w-full mt-4">
+              <Button 
+                variant="hero" 
+                size="default" 
+                className="flex items-center gap-2 w-full mt-4"
+                onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
+              >
                 <MessageCircle className="w-4 h-4" />
-                Fale conosco
+                WhatsApp
               </Button>
             </nav>
           </div>

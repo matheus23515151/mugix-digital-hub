@@ -227,13 +227,15 @@ const Services = () => {
               Escolha os serviços ideais para sua empresa ou deixe que montemos 
               uma estratégia completa e personalizada.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" className="flex items-center gap-2">
+            <div className="flex justify-center">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="flex items-center gap-2"
+                onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
+              >
                 <MessageSquare className="w-5 h-5" />
-                Falar com Especialista
-              </Button>
-              <Button variant="outline-hero" size="lg">
-                Ver Casos de Sucesso
+                Falar com Especialista via WhatsApp
               </Button>
             </div>
           </div>

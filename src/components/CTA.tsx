@@ -32,7 +32,12 @@ const CTA = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button variant="hero" size="lg" className="flex items-center gap-2 w-full sm:w-auto">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="flex items-center gap-2 w-full sm:w-auto"
+                onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
+              >
                 <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="text-sm sm:text-base">WhatsApp Direto</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
