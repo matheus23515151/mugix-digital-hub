@@ -1,5 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import AutomationShowcase from "@/components/AutomationShowcase";
+import AutomationQuiz from "@/components/AutomationQuiz";
+import BeforeAfter from "@/components/BeforeAfter";
+import ProcessTimeline from "@/components/ProcessTimeline";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Differentials from "@/components/Differentials";
@@ -12,6 +16,10 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <AutomationShowcase />
+      <AutomationQuiz />
+      <BeforeAfter />
+      <ProcessTimeline />
       <About />
       <Services />
       <Differentials />

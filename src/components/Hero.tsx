@@ -7,61 +7,69 @@ const Hero = () => {
     <section className="bg-gradient-hero py-20 lg:py-32">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-neutral-900 leading-tight">
-                Cuidamos do{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  digital
-                </span>{" "}
-                do seu negócio
+                <span className="block animate-fade-in-up">Automatize seu negócio e</span>
+                <span className="bg-gradient-primary bg-clip-text text-transparent block animate-fade-in-up stagger-1">
+                  multiplique resultados
+                </span>
               </h1>
-              <p className="text-xl text-neutral-600 leading-relaxed">
-                Automação, tráfego pago, CRM e design estratégico sob medida. 
-                Sua parceira para aumentar faturamento e reduzir custos no mundo digital.
+              <p className="text-xl text-neutral-600 leading-relaxed animate-fade-in-up stagger-2">
+                Transformamos processos manuais em sistemas inteligentes. Mais tempo para estratégia, 
+                menos tempo perdido com tarefas repetitivas.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-3">
+              <Button variant="cta" size="xl" className="flex items-center gap-2">
                 <MessageCircle className="w-5 h-5" />
-                Vamos digitalizar seu negócio
+                Descobrir meu potencial de automação
                 <ArrowRight className="w-5 h-5" />
               </Button>
               
               <Button variant="outline-hero" size="xl" className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5" />
-                Ver nossos serviços
+                Ver transformações reais
               </Button>
             </div>
 
-            <div className="flex items-center gap-8 pt-8">
+            <div className="flex items-center gap-8 pt-8 animate-fade-in-up stagger-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-neutral-900">100%</div>
-                <div className="text-sm text-neutral-600">Personalizado</div>
+                <div className="text-2xl font-bold text-neutral-900">80%</div>
+                <div className="text-sm text-neutral-600">Menos trabalho manual</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-neutral-900">24/7</div>
-                <div className="text-sm text-neutral-600">Suporte</div>
+                <div className="text-sm text-neutral-600">Automação ativa</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-neutral-900">+ROI</div>
-                <div className="text-sm text-neutral-600">Garantido</div>
+                <div className="text-2xl font-bold text-neutral-900">5x</div>
+                <div className="text-sm text-neutral-600">Mais eficiência</div>
               </div>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative animate-fade-in-right">
             <img
               src={heroImage}
-              alt="Transformação digital MugiX"
-              className="w-full h-auto rounded-2xl shadow-xl"
+              alt="Automação de processos MugiX"
+              className="w-full h-auto rounded-2xl shadow-xl hover-glow transition-all duration-300"
             />
-            <div className="absolute -bottom-6 -left-6 bg-background p-6 rounded-xl shadow-lg border border-neutral-200">
+            
+            {/* Floating automation indicators */}
+            <div className="absolute -top-4 -right-4 bg-gradient-primary p-4 rounded-xl shadow-lg animate-float">
+              <div className="text-center text-primary-foreground">
+                <div className="text-xl font-bold">⚡</div>
+                <div className="text-xs">Automação ativa</div>
+              </div>
+            </div>
+            
+            <div className="absolute -bottom-6 -left-6 bg-background p-6 rounded-xl shadow-lg border border-neutral-200 animate-pulse-glow">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-neutral-900">
-                  Atendimento ativo
+                  Processos automatizados
                 </span>
               </div>
             </div>
