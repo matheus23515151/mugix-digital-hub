@@ -1,1 +1,1 @@
-feat: otimiza responsividade da landing page e remove texto 'Resposta em até 1 hora'
+refactor: improve website responsiveness across all components
