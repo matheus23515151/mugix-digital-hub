@@ -213,10 +213,12 @@ const BeforeAfter = () => {
                   Cada negócio é único, mas os benefícios da automação são universais: 
                   mais eficiência, menos custos e melhor experiência do cliente.
                 </p>
-                <Button variant="cta" size="xl" className="hover-glow">
-                  Quero automatizar meu negócio
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
+                <div className="flex justify-center">
+                  <Button variant="cta" size="xl" className="hover-glow">
+                    Quero automatizar meu negócio
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
