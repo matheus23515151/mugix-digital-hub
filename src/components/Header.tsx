@@ -27,7 +27,19 @@ const Header = () => {
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8 lg:space-x-10">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <Link 
+              to="/" 
+              className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:scale-105 ${
+                isActive('/') 
+                  ? 'text-primary after:w-full' 
+                  : 'text-muted-foreground hover:text-foreground'
+              } after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                isActive('/') ? 'after:w-full' : 'after:w-0 hover:after:w-full'
+              }`}
+            >
+              Home
+            </Link>
             <Link 
               to="/sobre" 
               className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:scale-105 ${
@@ -105,37 +117,44 @@ const Header = () => {
           </div>
         </div>
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-neutral-200 pt-4 bg-background/95 backdrop-blur-sm rounded-lg shadow-lg">
-            <nav className="flex flex-col space-y-3">
+          <div className="md:hidden mt-3 pb-3 border-t border-border/50 pt-3 bg-background/95 backdrop-blur-sm rounded-xl shadow-xl mx-2">
+            <nav className="flex flex-col space-y-2">
+              <Link 
+                to="/" 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
+                onClick={toggleMobileMenu}
+              >
+                🏠 Home
+              </Link>
               <Link 
                 to="/sobre" 
-                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/sobre') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/sobre') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
                 📖 Sobre
               </Link>
               <Link 
                 to="/servicos" 
-                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/servicos') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/servicos') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
                 ⚙️ Serviços
               </Link>
               <Link 
                 to="/diferenciais" 
-                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/diferenciais') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/diferenciais') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
                 ⭐ Diferenciais
               </Link>
               <Link 
                 to="/agendamento" 
-                className={`px-4 py-3 rounded-lg transition-all text-base ${isActive('/agendamento') ? 'text-primary font-medium bg-primary/10' : 'text-neutral-600 hover:text-primary hover:bg-neutral-50'}`} 
+                className={`px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${isActive('/agendamento') ? 'text-primary font-semibold bg-primary/10 border border-primary/20' : 'text-muted-foreground hover:text-primary hover:bg-accent/50'}`} 
                 onClick={toggleMobileMenu}
               >
-                📅 Agende uma Reunião
+                📅 Agendar
               </Link>
-              <div className="pt-2 border-t border-neutral-200 mt-3">
+              <div className="pt-2 border-t border-border/50 mt-2">
                 <Button 
                   variant="hero" 
                   size="default" 
