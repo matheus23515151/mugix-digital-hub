@@ -1,1 +1,26 @@
-feat: create new landing page with a modern and responsive design
+feat: Padronização visual e integração WhatsApp no site MugiX
+
+✨ Novas funcionalidades:
+- Botão flutuante do WhatsApp (+55 62 8154-0306) em todas as páginas
+- Links de WhatsApp integrados no header, footer e CTAs
+
+🎨 Melhorias visuais:
+- Padronização completa de espaçamentos e tipografia
+- Sistema de classes CSS consistente (container-standard, section-padding, etc.)
+- Centralização aprimorada de elementos (ProcessTimeline, AutomationShowcase)
+- Simetria total entre cards e seções
+
+🗑️ Remoções:
+- Botão "Ver casos de sucesso" removido da página de serviços
+- Layout reorganizado para manter equilíbrio visual
+
+📱 Responsividade:
+- Grid inteligente para cards Marketing Inteligente e Comunicação Multicanal
+- Melhor distribuição em diferentes resoluções
+- Tipografia e espaçamentos responsivos otimizados
+
+🔧 Componentes atualizados:
+- WhatsAppFloat.tsx (novo componente)
+- Header.tsx, Footer.tsx, CTA.tsx
+- Services.tsx, ProcessTimeline.tsx, AutomationShowcase.tsx
+- index.css com classes de padronização visual
