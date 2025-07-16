@@ -2,24 +2,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/mugix-hero.jpg";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import { useParallax } from "@/hooks/useParallax";
 
 const Hero = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
-  const { elementRef: parallaxRef, getParallaxStyle } = useParallax();
 
   return (
-    <section ref={parallaxRef} className="bg-gradient-hero py-12 sm:py-16 lg:py-24 xl:py-32 overflow-x-hidden relative">
-      {/* Parallax Background Elements */}
-      <div 
-        className="absolute inset-0 opacity-20 parallax-slow" 
-        style={getParallaxStyle(0.3)}
-      >
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full blur-xl opacity-30"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-primary rounded-full blur-lg opacity-40"></div>
-      </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="bg-gradient-hero section-spacing relative w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left order-2 lg:order-1">
             <div 
@@ -75,7 +65,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative mt-8 lg:mt-0 order-1 lg:order-2 parallax-element" style={getParallaxStyle(0.2)}>
+          <div className="relative mt-8 lg:mt-0 order-1 lg:order-2">
             <img
               src={heroImage}
               alt="Automação de processos MugiX"

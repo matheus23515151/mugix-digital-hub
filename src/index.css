@@ -400,31 +400,29 @@ All colors MUST be HSL.
     100% { transform: scale(1.2) rotate(0deg); }
   }
   
-  /* Parallax effects */
-  .parallax-element {
-    transform-style: preserve-3d;
-    transition: transform 0.1s ease-out;
+  
+  /* Global container styles - Full width, no borders */
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
   }
   
-  .parallax-bg {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  /* Section spacing standardization - Compact and symmetric */
+  .section-spacing {
+    padding: 2rem 0;
   }
   
-  .parallax-slow {
-    transform: translateY(var(--parallax-offset, 0));
+  @media (min-width: 640px) {
+    .section-spacing {
+      padding: 3rem 0;
+    }
   }
   
-  .parallax-fast {
-    transform: translateY(var(--parallax-offset-fast, 0));
-  }
-  
-  /* Mobile parallax fallback */
-  @media (max-width: 768px) {
-    .parallax-bg {
-      background-attachment: scroll;
+  @media (min-width: 1024px) {
+    .section-spacing {
+      padding: 4rem 0;
     }
   }
 

@@ -1,10 +1,8 @@
 import { Bot, Zap, Cog, BarChart, MessageSquare, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useParallax } from "@/hooks/useParallax";
 
 const AutomationShowcase = () => {
-  const { elementRef: parallaxRef, getParallaxStyle } = useParallax();
   const automationAreas = [
     {
       icon: Bot,
@@ -44,18 +42,8 @@ const AutomationShowcase = () => {
   ];
 
   return (
-    <section ref={parallaxRef} className="py-12 sm:py-16 lg:py-20 bg-background relative overflow-hidden">
-      {/* Parallax Background Pattern */}
-      <div 
-        className="absolute inset-0 opacity-5 parallax-slow" 
-        style={getParallaxStyle(0.4)}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-        <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-gradient-primary rounded-full blur-2xl opacity-20"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-gradient-primary rounded-full blur-xl opacity-25"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative">
+    <section className="section-spacing bg-background relative w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12 lg:mb-16 animate-fade-in-up px-4 sm:px-0">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900">
