@@ -71,8 +71,8 @@ const AutomationShowcase = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${area.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                   
                   <CardHeader className="relative">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <IconComponent className="w-8 h-8 text-white" />
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-4 icon-container icon-float stagger-${index + 1}`}>
+                      <IconComponent className="w-8 h-8 text-white icon-hover icon-glow" />
                     </div>
                     <CardTitle className="text-xl text-neutral-900 group-hover:text-primary transition-colors duration-300">
                       {area.title}

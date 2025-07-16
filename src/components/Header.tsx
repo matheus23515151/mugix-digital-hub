@@ -42,12 +42,12 @@ const Header = () => {
               className="hidden md:flex items-center gap-2 text-sm lg:text-base"
               onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 icon-hover icon-pulse" />
               WhatsApp
             </Button>
             <div className="md:hidden">
               <Button onClick={toggleMobileMenu} variant="outline" size="icon">
-                {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
+                {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6 icon-hover icon-rotate" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6 icon-hover icon-bounce" />}
               </Button>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Header = () => {
                 className="flex items-center gap-2 w-full mt-4"
                 onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 icon-hover icon-pulse" />
                 WhatsApp
               </Button>
             </nav>

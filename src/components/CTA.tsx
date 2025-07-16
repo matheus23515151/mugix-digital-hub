@@ -38,13 +38,13 @@ const CTA = () => {
                 className="flex items-center gap-2 w-full sm:w-auto"
                 onClick={() => window.open('https://wa.me/556281540306?text=Olá,%20quero%20saber%20mais%20sobre%20os%20serviços%20da%20MugiX', '_blank')}
               >
-                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-pulse" />
                 <span className="text-sm sm:text-base">WhatsApp Direto</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 icon-hover" />
               </Button>
               
               <Button variant="outline-hero" size="lg" className="flex items-center gap-2 w-full sm:w-auto">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-rotate" />
                 <span className="text-sm sm:text-base">Agendar Ligação</span>
               </Button>
             </div>
@@ -69,7 +69,7 @@ const CTA = () => {
               href="mailto:contato@mugix.com.br" 
               className="inline-flex items-center gap-2 text-primary hover:text-primary-blue-dark transition-colors text-sm sm:text-base"
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-4 h-4 icon-hover icon-bounce" />
               contato@mugix.com.br
             </a>
           </div>

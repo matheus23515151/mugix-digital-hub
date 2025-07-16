@@ -16,7 +16,7 @@ const WhatsAppFloat = () => {
         className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-pulse-glow"
         size="icon"
       >
-        <MessageCircle className="w-6 h-6 text-white" />
+        <MessageCircle className="w-6 h-6 text-white icon-hover icon-float" />
       </Button>
     </div>
   );

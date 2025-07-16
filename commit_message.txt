@@ -1,26 +1,30 @@
-feat: Padronização visual e integração WhatsApp no site MugiX
+feat: Animações visuais interativas para todos os ícones do site MugiX
 
-✨ Novas funcionalidades:
-- Botão flutuante do WhatsApp (+55 62 8154-0306) em todas as páginas
-- Links de WhatsApp integrados no header, footer e CTAs
+✨ Novas animações implementadas:
+- Sistema completo de animações CSS para ícones (hover, float, pulse, bounce, rotate, shimmer)
+- Efeitos de escala, brilho, rotação e movimento flutuante
+- Transições suaves (0.3s) com curvas de animação profissionais
+- Delays em cascata (stagger) para sequências de ícones
 
-🎨 Melhorias visuais:
-- Padronização completa de espaçamentos e tipografia
-- Sistema de classes CSS consistente (container-standard, section-padding, etc.)
-- Centralização aprimorada de elementos (ProcessTimeline, AutomationShowcase)
-- Simetria total entre cards e seções
+🎨 Componentes atualizados com animações:
+- AutomationShowcase: ícones com float + glow + escala
+- Services (homepage): ícones com bounce + hover + glow  
+- Pages/Services: ícones com shimmer + pulse + hover
+- Pages/About: ícones com float + rotate + hover
+- Pages/Differentials: ícones com bounce + shimmer + hover
+- Footer: ícones sociais e contato com bounce + pulse + rotate
+- Header: ícones do menu e WhatsApp com pulse + bounce + rotate
+- CTA: ícones com pulse + rotate + bounce
+- WhatsAppFloat: ícone com hover + float
 
-🗑️ Remoções:
-- Botão "Ver casos de sucesso" removido da página de serviços
-- Layout reorganizado para manter equilíbrio visual
+📱 Otimizações:
+- Performance otimizada para mobile e desktop
+- Animações consistentes em todas as páginas
+- Efeitos sutis que mantêm profissionalismo
+- Compatibilidade total com design system existente
 
-📱 Responsividade:
-- Grid inteligente para cards Marketing Inteligente e Comunicação Multicanal
-- Melhor distribuição em diferentes resoluções
-- Tipografia e espaçamentos responsivos otimizados
-
-🔧 Componentes atualizados:
-- WhatsAppFloat.tsx (novo componente)
-- Header.tsx, Footer.tsx, CTA.tsx
-- Services.tsx, ProcessTimeline.tsx, AutomationShowcase.tsx
-- index.css com classes de padronização visual
+🔧 Classes CSS criadas:
+- .icon-hover, .icon-float, .icon-pulse, .icon-bounce
+- .icon-rotate, .icon-shimmer, .icon-glow, .icon-container
+- Animações keyframe personalizadas (bounce-subtle)
+- Sistema de delays para efeitos em cascata

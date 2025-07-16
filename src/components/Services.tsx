@@ -65,8 +65,8 @@ const Services = () => {
             return (
               <Card key={index} className="border-neutral-200 hover:shadow-lg transition-all duration-300 group interactive-card">
                 <CardHeader className="space-y-3 sm:space-y-4 p-4 sm:p-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center icon-container icon-bounce">
+                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground icon-hover icon-glow" />
                   </div>
                   <CardTitle className="text-lg sm:text-xl text-neutral-900">
                     {service.title}

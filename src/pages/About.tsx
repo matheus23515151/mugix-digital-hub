@@ -124,8 +124,8 @@ const About = () => {
                 const IconComponent = value.icon;
                 return (
                   <div key={index} className="bg-neutral-50 p-6 sm:p-8 rounded-xl sm:rounded-2xl text-center space-y-4 interactive-card">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto">
-                      <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto icon-container icon-float">
+                      <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground icon-hover icon-rotate" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-semibold text-neutral-900">
                       {value.title}

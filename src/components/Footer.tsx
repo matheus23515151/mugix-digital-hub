@@ -17,15 +17,15 @@ const Footer = () => {
             <div className="flex gap-3 sm:gap-4">
               <a 
                 href="#" 
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-neutral-800 rounded-lg flex items-center justify-center icon-container icon-bounce"
               >
-                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-glow" />
               </a>
               <a 
                 href="#" 
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-neutral-800 rounded-lg flex items-center justify-center icon-container icon-bounce"
               >
-                <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Instagram className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-glow" />
               </a>
             </div>
           </div>
@@ -64,18 +64,18 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-pulse" />
                 <span>(62) 8154-0306</span>
               </a>
               <a 
                 href="mailto:contato@mugix.com.br" 
                 className="flex items-center gap-2 sm:gap-3 text-neutral-400 hover:text-primary transition-colors"
               >
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-bounce" />
                 <span>contato@mugix.com.br</span>
               </a>
               <div className="flex items-center gap-2 sm:gap-3 text-neutral-400">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 icon-hover icon-rotate" />
                 <span>Segunda a Sexta, 8h às 18h</span>
               </div>
             </div>

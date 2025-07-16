@@ -129,8 +129,8 @@ const Differentials = () => {
                 <div key={index} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-xl flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-xl flex items-center justify-center icon-container icon-bounce">
+                        <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground icon-hover icon-shimmer" />
                       </div>
                       <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900">
                         {differential.title}

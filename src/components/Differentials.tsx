@@ -53,8 +53,8 @@ const Differentials = () => {
                 const IconComponent = differential.icon;
                 return (
                   <div key={index} className="flex gap-3 sm:gap-4 p-4 sm:p-6 bg-neutral-50 rounded-xl sm:rounded-2xl hover:bg-gradient-subtle transition-all duration-300 interactive-card">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 icon-container icon-float">
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground icon-hover icon-glow" />
                     </div>
                     <div className="space-y-1 sm:space-y-2">
                       <h3 className="text-lg sm:text-xl font-semibold text-neutral-900">
