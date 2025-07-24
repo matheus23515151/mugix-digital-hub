@@ -33,7 +33,7 @@ const Hero = () => {
                 variant="cta" 
                 size="lg" 
                 className="flex items-center gap-2 w-full sm:w-auto btn-modern ripple hover-glow"
-                onClick={() => window.open('/agendamento', '_self')}
+                onClick={() => window.location.href = '/agendamento'}
               >
                 <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="text-sm sm:text-base">Quero parar de perder tempo</span>

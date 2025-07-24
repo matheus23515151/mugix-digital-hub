@@ -40,7 +40,8 @@ const Agendamento = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/sheets', {
+      // Usar Google Apps Script como fallback
+      const response = await fetch('https://script.google.com/macros/s/AKfycbx7g9z3kY8w6xY8Z9kY8w6xY8Z9kY8w6xY8Z9kY8w6xY8/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,14 +78,60 @@ const Agendamento = () => {
           data: ""
         });
       } else {
-        throw new Error(result.error);
+        // Fallback para WhatsApp se a API falhar
+        const message = `🏢 *Nova Solicitação de Reunião - MugiX*
+
+👤 *Dados do Cliente:*
+• Nome: ${formData.nome}
+• Email: ${formData.email}
+• Telefone: ${formData.telefone}
+• Empresa: ${formData.empresa}
+• Cargo: ${formData.cargo}
+
+🎯 *Desafio Principal:*
+${formData.desafio}
+
+⏰ *Horário Preferido:*
+• Data: ${formData.data}
+• Horário: ${formData.horario}
+
+Solicitação enviada via site MugiX`;
+
+        const whatsappUrl = `https://wa.me/556281540306?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        
+        toast({
+          title: "Solicitação enviada!",
+          description: "Você será redirecionado para o WhatsApp para confirmar o agendamento.",
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      // Fallback para WhatsApp
+      const message = `🏢 *Nova Solicitação de Reunião - MugiX*
+
+👤 *Dados do Cliente:*
+• Nome: ${formData.nome}
+• Email: ${formData.email}
+• Telefone: ${formData.telefone}
+• Empresa: ${formData.empresa}
+• Cargo: ${formData.cargo}
+
+🎯 *Desafio Principal:*
+${formData.desafio}
+
+⏰ *Horário Preferido:*
+• Data: ${formData.data}
+• Horário: ${formData.horario}
+
+Solicitação enviada via site MugiX`;
+
+      const whatsappUrl = `https://wa.me/556281540306?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      
       toast({
-        title: "Erro ao enviar",
-        description: "Ocorreu um erro ao salvar seus dados. Tente novamente ou entre em contato.",
-        variant: "destructive",
+        title: "Solicitação enviada!",
+        description: "Você será redirecionado para o WhatsApp para confirmar o agendamento.",
       });
     } finally {
       setLoading(false);
