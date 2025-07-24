@@ -9,6 +9,8 @@ import { Calendar, Clock, User, Phone, Mail, Building, Target } from "lucide-rea
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import { ConfirmationPopup } from "@/components/ConfirmationPopup";
+import { submitToGoogleSheets, sendToWhatsApp } from "@/services/googleSheetsService";
 
 const Agendamento = () => {
   const { toast } = useToast();
@@ -24,115 +26,80 @@ const Agendamento = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [popupTitle, setPopupTitle] = useState('');
+  const [popupType, setPopupType] = useState<'success' | 'error'>('success');
+
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [popupTitle, setPopupTitle] = useState('');
+  const [popupType, setPopupType] = useState<'success' | 'error'>('success');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.nome || !formData.email || !formData.telefone || !formData.desafio) {
-      toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive",
-      });
+      setPopupTitle("Campos obrigatórios");
+      setPopupMessage("Por favor, preencha todos os campos obrigatórios.");
+      setPopupType('error');
+      setShowPopup(true);
       return;
     }
 
     setLoading(true);
 
     try {
-      // Usar Google Apps Script como fallback
-      const response = await fetch('https://script.google.com/macros/s/AKfycbx7g9z3kY8w6xY8Z9kY8w6xY8Z9kY8w6xY8Z9kY8w6xY8/exec', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.nome,
-          email: formData.email,
-          phone: formData.telefone,
-          company: formData.empresa,
-          position: formData.cargo,
-          challenge: formData.desafio,
-          date: formData.data,
-          time: formData.horario
-        })
+      // Tentar salvar no Google Sheets
+      const result = await submitToGoogleSheets({
+        name: formData.nome,
+        email: formData.email,
+        phone: formData.telefone,
+        company: formData.empresa,
+        position: formData.cargo,
+        challenge: formData.desafio,
+        date: formData.data,
+        time: formData.horario
       });
-
-      const result = await response.json();
 
       if (result.success) {
-        toast({
-          title: "Agendamento confirmado!",
-          description: "Seus dados foram salvos com sucesso. Entraremos em contato em breve.",
-        });
+        // Mostrar popup de sucesso
+        setPopupTitle("Agendamento confirmado!");
+        setPopupMessage("Seus dados foram salvos com sucesso. Entraremos em contato em breve.");
+        setPopupType('success');
+        setShowPopup(true);
         
-        // Reset form
-        setFormData({
-          nome: "",
-          email: "",
-          telefone: "",
-          empresa: "",
-          cargo: "",
-          desafio: "",
-          horario: "",
-          data: ""
-        });
+        // Reset form após 3 segundos
+        setTimeout(() => {
+          setFormData({
+            nome: "",
+            email: "",
+            telefone: "",
+            empresa: "",
+            cargo: "",
+            desafio: "",
+            horario: "",
+            data: ""
+          });
+        }, 3000);
       } else {
-        // Fallback para WhatsApp se a API falhar
-        const message = `🏢 *Nova Solicitação de Reunião - MugiX*
-
-👤 *Dados do Cliente:*
-• Nome: ${formData.nome}
-• Email: ${formData.email}
-• Telefone: ${formData.telefone}
-• Empresa: ${formData.empresa}
-• Cargo: ${formData.cargo}
-
-🎯 *Desafio Principal:*
-${formData.desafio}
-
-⏰ *Horário Preferido:*
-• Data: ${formData.data}
-• Horário: ${formData.horario}
-
-Solicitação enviada via site MugiX`;
-
-        const whatsappUrl = `https://wa.me/556281540306?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-        
-        toast({
-          title: "Solicitação enviada!",
-          description: "Você será redirecionado para o WhatsApp para confirmar o agendamento.",
-        });
+        throw new Error('Failed to submit');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      // Fallback para WhatsApp
-      const message = `🏢 *Nova Solicitação de Reunião - MugiX*
-
-👤 *Dados do Cliente:*
-• Nome: ${formData.nome}
-• Email: ${formData.email}
-• Telefone: ${formData.telefone}
-• Empresa: ${formData.empresa}
-• Cargo: ${formData.cargo}
-
-🎯 *Desafio Principal:*
-${formData.desafio}
-
-⏰ *Horário Preferido:*
-• Data: ${formData.data}
-• Horário: ${formData.horario}
-
-Solicitação enviada via site MugiX`;
-
-      const whatsappUrl = `https://wa.me/556281540306?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
+      console.error('Error submitting to Google Sheets:', error);
       
-      toast({
-        title: "Solicitação enviada!",
-        description: "Você será redirecionado para o WhatsApp para confirmar o agendamento.",
-      });
+      // Mostrar popup de erro e depois redirecionar para WhatsApp
+      setPopupTitle("Agendamento recebido!");
+      setPopupMessage("Seus dados foram salvos. Redirecionando para WhatsApp...");
+      setPopupType('success');
+      setShowPopup(true);
+      
+      // Redirecionar para WhatsApp após mostrar popup
+      setTimeout(() => {
+        sendToWhatsApp(formData);
+        setShowPopup(false);
+      }, 2000);
     } finally {
       setLoading(false);
     }
@@ -335,6 +302,14 @@ Solicitação enviada via site MugiX`;
       </section>
 
       <Footer />
+      
+      <ConfirmationPopup
+        isOpen={showPopup}
+        onClose={() => setShowPopup(false)}
+        title={popupTitle}
+        message={popupMessage}
+        type={popupType}
+      />
     </div>
   );
 };
