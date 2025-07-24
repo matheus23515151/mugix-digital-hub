@@ -32,7 +32,7 @@ const Hero = () => {
               <Button 
                 variant="cta" 
                 size="lg" 
-                className="flex items-center gap-2 w-full sm:w-auto"
+                className="flex items-center gap-2 w-full sm:w-auto btn-modern ripple hover-glow"
                 onClick={() => window.open('/agendamento', '_self')}
               >
                 <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -40,7 +40,7 @@ const Hero = () => {
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
               
-              <Button variant="outline-hero" size="lg" className="flex items-center gap-2 w-full sm:w-auto">
+              <Button variant="outline-hero" size="lg" className="flex items-center gap-2 w-full sm:w-auto btn-modern ripple hover-glow">
                 <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="text-sm sm:text-base">Ver casos de sucesso</span>
               </Button>

@@ -23,35 +23,72 @@ const Agendamento = () => {
     data: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Formatar mensagem para WhatsApp
-    const message = `🏢 *Nova Solicitação de Reunião - MugiX*
+    if (!formData.nome || !formData.email || !formData.telefone || !formData.desafio) {
+      toast({
+        title: "Campos obrigatórios",
+        description: "Por favor, preencha todos os campos obrigatórios.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-👤 *Dados do Cliente:*
-• Nome: ${formData.nome}
-• Email: ${formData.email}
-• Telefone: ${formData.telefone}
-• Empresa: ${formData.empresa}
-• Cargo: ${formData.cargo}
+    setLoading(true);
 
-🎯 *Desafio Principal:*
-${formData.desafio}
+    try {
+      const response = await fetch('/api/sheets', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.nome,
+          email: formData.email,
+          phone: formData.telefone,
+          company: formData.empresa,
+          position: formData.cargo,
+          challenge: formData.desafio,
+          date: formData.data,
+          time: formData.horario
+        })
+      });
 
-⏰ *Horário Preferido:*
-• Data: ${formData.data}
-• Horário: ${formData.horario}
+      const result = await response.json();
 
-Solicitação enviada via site MugiX`;
-
-    const whatsappUrl = `https://wa.me/556281540306?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: "Solicitação enviada!",
-      description: "Você será redirecionado para o WhatsApp para confirmar o agendamento.",
-    });
+      if (result.success) {
+        toast({
+          title: "Agendamento confirmado!",
+          description: "Seus dados foram salvos com sucesso. Entraremos em contato em breve.",
+        });
+        
+        // Reset form
+        setFormData({
+          nome: "",
+          email: "",
+          telefone: "",
+          empresa: "",
+          cargo: "",
+          desafio: "",
+          horario: "",
+          data: ""
+        });
+      } else {
+        throw new Error(result.error);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Erro ao enviar",
+        description: "Ocorreu um erro ao salvar seus dados. Tente novamente ou entre em contato.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -238,11 +275,11 @@ Solicitação enviada via site MugiX`;
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full"
-                  disabled={!formData.nome || !formData.email || !formData.telefone || !formData.desafio}
+                  className="w-full btn-modern ripple hover-glow"
+                  disabled={!formData.nome || !formData.email || !formData.telefone || !formData.desafio || loading}
                 >
                   <Calendar className="w-4 h-4 mr-2" />
-                  Solicitar Agendamento
+                  {loading ? "Enviando..." : "Solicitar Agendamento"}
                 </Button>
               </form>
             </CardContent>

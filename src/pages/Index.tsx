@@ -11,8 +11,12 @@ import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import { useAnimations } from "@/hooks/useAnimations";
+import "@/styles/animations.css";
 
 const Index = () => {
+  useAnimations();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
