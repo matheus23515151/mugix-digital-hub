@@ -31,12 +31,6 @@ const Agendamento = () => {
   const [popupTitle, setPopupTitle] = useState('');
   const [popupType, setPopupType] = useState<'success' | 'error'>('success');
 
-  const [loading, setLoading] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const [popupMessage, setPopupMessage] = useState('');
-  const [popupTitle, setPopupTitle] = useState('');
-  const [popupType, setPopupType] = useState<'success' | 'error'>('success');
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
