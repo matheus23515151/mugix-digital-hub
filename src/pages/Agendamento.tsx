@@ -81,11 +81,16 @@ const Agendamento = () => {
         throw new Error('Failed to submit');
       }
     } catch (error) {
-      console.error('Error submitting to Google Sheets:', error);
+      console.error('Erro completo ao enviar:', error);
       
-      // Mostrar popup de erro sem redirecionar para WhatsApp
+      // Mostrar popup com mensagem de erro específica
+      let errorMessage = "Ocorreu um erro ao salvar seu agendamento.";
+      if (error instanceof Error) {
+        errorMessage += ` Detalhes: ${error.message}`;
+      }
+      
       setPopupTitle("Erro ao enviar");
-      setPopupMessage("Ocorreu um erro ao salvar seu agendamento. Por favor, tente novamente ou entre em contato diretamente.");
+      setPopupMessage(errorMessage);
       setPopupType('error');
       setShowPopup(true);
     } finally {

@@ -14,9 +14,9 @@ interface FormData {
 
 export const submitToGoogleSheets = async (data: FormData): Promise<{success: boolean; error?: string}> => {
   try {
-    // Testar se a URL está acessível
-    console.log('Enviando dados para:', GOOGLE_SHEETS_URL);
-    console.log('Dados enviados:', data);
+    console.log('=== INICIANDO ENVIO ===');
+    console.log('URL:', GOOGLE_SHEETS_URL);
+    console.log('Dados enviados:', JSON.stringify(data, null, 2));
     
     const response = await fetch(GOOGLE_SHEETS_URL, {
       method: 'POST',
@@ -27,18 +27,30 @@ export const submitToGoogleSheets = async (data: FormData): Promise<{success: bo
       body: JSON.stringify(data),
     });
 
-    console.log('Resposta do servidor:', response.status, response.statusText);
+    console.log('Status da resposta:', response.status);
+    console.log('Headers:', response.headers);
+    
+    const responseText = await response.text();
+    console.log('Resposta bruta:', responseText);
     
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`Erro HTTP: ${response.status} - ${responseText}`);
     }
     
-    const result = await response.json();
-    console.log('Resultado:', result);
-    return result;
+    try {
+      const result = JSON.parse(responseText);
+      console.log('Resultado:', result);
+      return result;
+    } catch (parseError) {
+      throw new Error(`Erro ao parsear JSON: ${responseText}`);
+    }
+    
   } catch (error) {
-    console.error('Erro ao enviar para Google Sheets:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Erro de rede' };
+    console.error('=== ERRO COMPLETO ===');
+    console.error('Tipo do erro:', error.constructor.name);
+    console.error('Mensagem:', error instanceof Error ? error.message : error);
+    console.error('Stack:', error instanceof Error ? error.stack : 'N/A');
+    return { success: false, error: error instanceof Error ? error.message : 'Erro desconhecido' };
   }
 };
 
