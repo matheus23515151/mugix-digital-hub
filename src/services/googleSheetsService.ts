@@ -1,5 +1,5 @@
 // Configuração correta do Google Sheets
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycby8v2tV3R4m9xY8Z9kY8w6xY8Z9kY8w6xY8Z9kY8w6xY8/exec';
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxSm8pw-XIXywSUn7_0e0Vpb17tNEYv45RhQ0cllshTEWsZjvUZBWbDhtjSHsYZq7TI5w/exec';
 
 interface FormData {
   name: string;
