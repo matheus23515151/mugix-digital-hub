@@ -14,19 +14,31 @@ interface FormData {
 
 export const submitToGoogleSheets = async (data: FormData): Promise<{success: boolean; error?: string}> => {
   try {
+    // Testar se a URL está acessível
+    console.log('Enviando dados para:', GOOGLE_SHEETS_URL);
+    console.log('Dados enviados:', data);
+    
     const response = await fetch(GOOGLE_SHEETS_URL, {
       method: 'POST',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
 
+    console.log('Resposta do servidor:', response.status, response.statusText);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
     const result = await response.json();
+    console.log('Resultado:', result);
     return result;
   } catch (error) {
-    console.error('Error submitting to Google Sheets:', error);
-    return { success: false, error: 'Network error' };
+    console.error('Erro ao enviar para Google Sheets:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Erro de rede' };
   }
 };
 

@@ -12,8 +12,24 @@ const SHEET_ID = '1VtzKOImEaOMS0LvxxZwufRpDZOS9i3kCWQYHBObAfGs'; // Sua planilha
 const SHEET_NAME = 'Agendamentos';
 
 function doPost(e) {
+  // Adicionar headers CORS
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json'
+  };
+  
+  // Tratar preflight requests (OPTIONS)
+  if (e.parameter.method === 'OPTIONS') {
+    return ContentService
+      .createTextOutput('')
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
   try {
     const data = JSON.parse(e.postData.contents);
+    console.log('Dados recebidos:', data);
     
     // Validar dados obrigatórios
     if (!data.name || !data.email || !data.challenge) {
@@ -51,8 +67,9 @@ function doPost(e) {
     
     // Adicionar linha
     sheet.appendRow(rowData);
+    console.log('Dados salvos com sucesso:', rowData);
     
-    // Retornar sucesso
+    // Retornar sucesso com headers CORS
     return ContentService
       .createTextOutput(JSON.stringify({
         success: true,
@@ -61,7 +78,7 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Erro:', error);
     return ContentService
       .createTextOutput(JSON.stringify({
         success: false,
