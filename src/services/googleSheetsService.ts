@@ -18,7 +18,7 @@ export const submitToGoogleSheets = async (data: FormData): Promise<{success: bo
     console.log('URL:', GOOGLE_SHEETS_URL);
     console.log('Dados enviados:', JSON.stringify(data, null, 2));
     
-    const response = await fetch(GOOGLE_SHEETS_URL, {
+    const response = await fetch(GOOGLE_SHEETS_URL + '?t=' + Date.now(), {
       method: 'POST',
       mode: 'cors',
       headers: {
