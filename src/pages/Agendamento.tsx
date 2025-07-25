@@ -10,7 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import { ConfirmationPopup } from "@/components/ConfirmationPopup";
-import { submitToGoogleSheets, sendToWhatsApp } from "@/services/googleSheetsService";
+import { submitToGoogleSheets } from "@/services/googleSheetsService";
 
 const Agendamento = () => {
   const { toast } = useToast();
@@ -83,17 +83,11 @@ const Agendamento = () => {
     } catch (error) {
       console.error('Error submitting to Google Sheets:', error);
       
-      // Mostrar popup de erro e depois redirecionar para WhatsApp
-      setPopupTitle("Agendamento recebido!");
-      setPopupMessage("Seus dados foram salvos. Redirecionando para WhatsApp...");
-      setPopupType('success');
+      // Mostrar popup de erro sem redirecionar para WhatsApp
+      setPopupTitle("Erro ao enviar");
+      setPopupMessage("Ocorreu um erro ao salvar seu agendamento. Por favor, tente novamente ou entre em contato diretamente.");
+      setPopupType('error');
       setShowPopup(true);
-      
-      // Redirecionar para WhatsApp após mostrar popup
-      setTimeout(() => {
-        sendToWhatsApp(formData);
-        setShowPopup(false);
-      }, 2000);
     } finally {
       setLoading(false);
     }
